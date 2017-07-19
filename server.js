@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const database = require('./server/config/database');
 
 const mongoose = require('mongoose');
-mongoose.connect(database.localUrl);
+mongoose.connect(database.remoteUrl);
 
 //api
 const api = require('./server/routes/api');
