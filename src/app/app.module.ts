@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 //services
 import { RestaurantService } from './services/restaurant.service';
 
-//new comment
+//new comment sss
 const ROUTES = [
   {
     path: '',
