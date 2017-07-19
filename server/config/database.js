@@ -13,7 +13,7 @@ module.exports = {
 
 
 
-
+//use feastfreedom
 //db.createUser({user: "feastfreedomuser",pwd: "feastfreedomuser123",roles:[{"role" : "readWrite","db": "feastfreedom"}]})
 
 //sudo mongo feastfreedom -u feastfreedomuser -p feastfreedomuser123
