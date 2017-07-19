@@ -6,7 +6,7 @@ module.exports = {
 
 
 //to connect from putty
-//sudo mongo admin -u sinuhe -p sinuhe
+//sudo mongo admin -u sinuhe -p 
 
 //use admin 
 //db.createUser({user: "feastfreedomuser", pwd: "feastfreedomuser123",roles: [ "root" ]})
