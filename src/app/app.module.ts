@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 
 //services
 import { RestaurantService } from './services/restaurant.service';
+import { CustomersComponent } from './customers/customers.component';
 
 //new comment sss
 const ROUTES = [
@@ -24,6 +25,10 @@ const ROUTES = [
   {
     path: 'stores',
     component: StoresComponent
+  },
+  {
+    path:'customers',
+    component: CustomersComponent
   }
 ];
 
@@ -31,7 +36,8 @@ const ROUTES = [
   declarations: [
     AppComponent,
     StoresComponent,
-    HomeComponent
+    HomeComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

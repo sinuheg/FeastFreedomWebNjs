@@ -81,6 +81,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__stores_stores_component__ = __webpack_require__("../../../../../src/app/stores/stores.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_restaurant_service__ = __webpack_require__("../../../../../src/app/services/restaurant.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__customers_customers_component__ = __webpack_require__("../../../../../src/app/customers/customers.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -97,6 +98,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 //services
 
+
+//new comment sss
 var ROUTES = [
     {
         path: '',
@@ -110,6 +113,10 @@ var ROUTES = [
     {
         path: 'stores',
         component: __WEBPACK_IMPORTED_MODULE_5__stores_stores_component__["a" /* StoresComponent */]
+    },
+    {
+        path: 'customers',
+        component: __WEBPACK_IMPORTED_MODULE_8__customers_customers_component__["a" /* CustomersComponent */]
     }
 ];
 var AppModule = (function () {
@@ -122,7 +129,8 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_5__stores_stores_component__["a" /* StoresComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__home_home_component__["a" /* HomeComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__customers_customers_component__["a" /* CustomersComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -135,6 +143,67 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/customers/customers.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/customers/customers.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  customers works! new changes\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/customers/customers.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomersComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CustomersComponent = (function () {
+    function CustomersComponent() {
+    }
+    CustomersComponent.prototype.ngOnInit = function () {
+    };
+    return CustomersComponent;
+}());
+CustomersComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-customers',
+        template: __webpack_require__("../../../../../src/app/customers/customers.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/customers/customers.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CustomersComponent);
+
+//# sourceMappingURL=customers.component.js.map
 
 /***/ }),
 
