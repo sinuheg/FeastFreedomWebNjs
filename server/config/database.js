@@ -1,5 +1,6 @@
 module.exports = {
-    remoteUrl: 'mongodb://feastfreedomuser:feastfreedomuser123@ec2-34-203-188-157.compute-1.amazonaws.com/feastfreedom',
+    //remoteUrl: 'mongodb://feastfreedomuser:feastfreedomuser123@ec2-34-203-188-157.compute-1.amazonaws.com/feastfreedom',
+    remoteUrl: 'mongodb://FFUserNjs:FFUserNjs123@ec2-34-204-50-45.compute-1.amazonaws.com/feastfreedom',
     localUrl: 'mongodb://localhost/feastfreedom'
 }
 
