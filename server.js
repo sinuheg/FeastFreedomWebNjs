@@ -11,6 +11,7 @@ mongoose.connect(database.remoteUrl);
 //api
 const api = require('./server/routes/api');
 
+//init express
 const app = express();
 
 //parsers for post data
