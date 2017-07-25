@@ -8,7 +8,7 @@ const database = require('./server/config/database');
 //this is the new change
 const mongoose = require('mongoose');
 mongoose.connect(database.remoteUrl);
-
+//This is a test
 //api
 const api = require('./server/routes/api');
 
