@@ -51,7 +51,7 @@ button{overflow:visible;width:auto}
 .clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden}
 .clearfix:after,.clear{clear:both}
 body,select,input,textarea{color:#444}
-a:link{-webkit-tap-highlight-color:#fcd700}
+/*a:link{-webkit-tap-highlight-color:#fcd700}*/
 ins{background-color:#fcd700;color:#000;text-decoration:none}
 mark{background-color:#fcd700;color:#000;font-style:italic;font-weight:700}
 input[type=radio],.ie6 input{vertical-align:text-bottom}
@@ -122,11 +122,11 @@ label {cursor: default;}
 .block p, .block .top-text{letter-spacing: 0.04em;}
 .features-block{font-family: 'Montserrat-Light', sans-serif;}
 .top-text {color: #575757;width: 61%;margin: 0 auto 65px;display: block;line-height: 27px;}
-
-.login-modal-container{ width:360px; margin:0 auto; padding:20px; background:#fff;}
+.login-help{width:100%; font-size:12px; margin-top:10px;}
+.login-modal-container{ width:380px; margin:0 auto; padding:20px; background:#fff;}
 .login-modal-container a{color:#4ea950;}
-.login-modal-container input{margin:10px 0;}
-..loginmodal-submit{	
+
+.loginmodal-submit{	
     border: 0px;
     color: #fff;
     text-shadow: 0 1px rgba(0,0,0,0.1);
@@ -135,11 +135,11 @@ label {cursor: default;}
     font-size: 14px;
     /* background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4d90fe), to(#4787ed)); */
 }
-.modal-dialog{margin:10% auto;}
+.modal-dialog{margin:7% auto;}
 
 /*=============== # Transition effects  ===================*/
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .radio-btn *, .pagination *, .btn-tags-big:after, .modal-content button.close, .blog-admin *, .plan-step *, .navbar-default .navbar-nav>li>a:after, .select-program-btn a:after, .select-program-btn *, .btn, .footer-links-col *, .feature-item-wrap *, .small-image-group img, .big-image img, .contact-left-text *, .popular-posts img, .menu-item-wrap *, .food-type h5 a, .nav-tabs>li>a:after, .food-image figure img, .food-image figure:before, .btn-tags, .sidebar-wrap *, input, select, textarea, .pricing-box *, .team-member-col *, .blog-single-wrap *, .bx-wrapper .bx-pager.bx-default-pager a, .instagram-image-row li img, .featured-menu-slider a, .featured-menu-slider a *, .blog-post-wrap *, .menu-sidebox-wrap *, ul.side-cat-list li a, .seller-list ul li a *, .ingredient-tags li a *, .menu-listing-wrap .menu-item-wrap, .menu-pegination ul li *, .cart-steps ul.steps a *, .sucess-story .bx-wrapper .bx-controls-direction a, .cat-wrap a *, .ui-slider .ui-slider-handle{transition: all .4s ease-in-out;-webkit-transition: all .4s ease-in-out;-moz-transition: all .4s ease-in-out;-o-transition: all .4s ease-in-out;-ms-transition: all .4s ease-in-out;}
-.wrapper>header img, .wrapper>header * {transition: all .6s ease-in-out;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;}
+/*.wrapper>header img, .wrapper>header * {transition: all .6s ease-in-out;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;}
 .wrapper>header{transition: all 0.4s ease-in-out;}
 
 
@@ -154,7 +154,7 @@ h4 {font-size:22px;line-height: 30px;}
 h5 {font-size:20px;line-height: 28px;} 
 h6 {font-size:16px;line-height: 24px;}
 
-header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #fff;top: 0;}
+header {padding: 7px 0px;z-index: 1;position: fixed !important; height:70px;  width: 100%;background: #fff;top: 0;}
 .logo-block {margin-top: 4px;}
 header.green .logo-block {margin-top: 4px;}
 .logo-block figure {margin-bottom: 0;width: 240px;}
@@ -181,8 +181,8 @@ header.green .border-btn-small:hover {background: #fff;color: #ed1b2e;}
 
 /*======================= ## Header banner ==================*/
 .banner {overflow: hidden;}
-.wrapper {padding-top: 80px;position: relative;}
-.banner-image {height: 406px;overflow: hidden;}
+.wrapper {padding-top: 70px;position: relative;}
+.banner-image {height: 100%;overflow: hidden;}
 .banner-text {position: absolute;top: 32%;width: 100%;}
 .banner-text h1 {color: #000;line-height: 56px;letter-spacing:0.05em;}
 .banner-text h1 strong{font-size: 46px;color: #ed1b2e;}
@@ -210,23 +210,27 @@ header.green .border-btn-small:hover {background: #fff;color: #ed1b2e;}
 
 /*======================= # Subscribe section  ==================*/
 .subscribe-form input, .subscribe-form select, .subscribe-form textarea {color: #b9b9b9;font-size: 15px;}
-.subscribe-form input{border: 1px solid #4ea950;border-top-left-radius: 4px;border-bottom-left-radius: 4px;padding: 21px 25px;width: 70.7%;float: left;border-right: 0;}
+.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 21px 25px;width: 70.7%;float: left;border-right: 0;}
 .subscribe-form button{width: 29.3%;float: left;}
-.subscribe-form {width: auto;margin: auto;letter-spacing: 0.1em;}
-.subscribe-form button {border-top-left-radius: 0;border-bottom-left-radius: 0;padding:19.6px 20px;}
+.subscribe-form b{color:#000;}
+.subscribe-form {width:50%;letter-spacing: 0.1em;}
+.subscribe-form button {/*border-top-left-radius: 0;border-bottom-left-radius: 0;*/ border-radius:0; padding:19.6px 20px;}
 .subscribe-block .top-text {margin-bottom: 30px;width: 44%;letter-spacing: 0.1em;font-family: 'Montserrat-Light', sans-serif;}
 
 /*======================= # Homepage type 1  ==================*/
 .home-page header {position: fixed;top: 0;width: 100%;}
-.home-banner {height: 580px;top: 0px;overflow: hidden;/*******margin-top: -94px;*************/}
-.home-banner .bannerwrap figure img {position: absolute;left: -99999px;right: -99999px;margin: auto;}
-.home-banner1.home-banner .banner-text {width: 40%;}
+.home-banner {min-height: 100% !important; position:fixed;
+    height: 100% !important;top: 0px;overflow: hidden; /*******margin-top: -94px;*************/}
+.home-banner .bannerwrap figure img {position: relative;margin:0 auto;}
+.home-banner1.home-banner .banner-text {width: 50%;}
 .home-banner1.home-banner .banner-text h1 {margin-bottom: 18px;}
 .home-banner1.home-banner a.btn {font-size: 18px;padding: 13px 13.5%;}
-.home-banner1.home-banner .banner-text p {font-size: 17px;line-height: 30px;color: #575757;}
-.home-banner1.home-banner .banner-text {top: 20%;}
-#owl-demo .item img{display: block;width: 100%;height: auto;}
-.owl-carousel .owl-item {position: relative;}
+.home-banner1.home-banner .banner-text p {font-size: 17px;line-height: 30px;color: #000;}
+.home-banner1.home-banner .banner-text {top: 20%; left:5%;}
+#owl-demo .item img{display: block;width: 100%;
+    height: 100% !important;}
+.owl-carousel .owl-item {position: relative; 
+    height: 100% !important;}
 
 
 
@@ -316,7 +320,7 @@ video {width: 100%;vertical-align: bottom;}
 
 /*======================= # Sidebar ==================*/
 .search-section{margin-bottom: 0px; background:#f1f1f1;}
-.search-section form input {border: 1px solid #f1f1f1;padding: 16px 11%; margin-top:7px;background:#fff url(../images/search-icon.png) no-repeat;background-position: 8% 13px;}
+.search-section form input {border: 1px solid #f1f1f1;padding: 16px 11%; margin-top:0px;background:#fff url(../images/search-icon.png) no-repeat;background-position: 8% 13px;}
 
 
 /*======================= ## Recent posts ==================*/
@@ -528,10 +532,10 @@ input.txtacrescimo{ width: 30px; margin: 0; text-align: center; font-size: 16px;
 
 
 /*====================== # Responsive styles ============================*/
-header.scrolled{background: #fafafa; width: 100%; padding: 9px 0 3px; box-shadow: 1px 1px 10px 1px #ddd;}
+/*header.scrolled{background: #fafafa; width: 100%; height:81px; padding: 16px 0; box-shadow: 1px 1px 10px 1px #ddd;}
 header.scrolled img{transform: scale(.79);}
 header.scrolled .cart-btn img{transform: scale(1);}
-header.green {background: #ed1b2e;}
+header.green {background: #ed1b2e;}*/
 
 
 @media (min-width: 1400px){
@@ -546,11 +550,12 @@ header.green {background: #ed1b2e;}
 @media (min-width: 769px){
   /** parallax effect on header, banner, main content and footer **/
   .right-nav{ margin-top:10px;}
-  .banner {z-index: 1;    position: relative;}
+  .banner {z-index: 1;    position: relative; height:100% !important}
    main.inner {position: relative; z-index: 111;background: #fff;margin-top: 0px; border-top:solid 15px #f2f2f4; clear:both;}
-  main {position: relative; z-index: 111;background: #fff;margin-top: 431px; clear:both;}
+  main {position: relative;  z-index: 1;background: #fff; clear:both;}
   header {z-index: 999;}
-  .banner .bannerwrap {position: fixed;width: 100%;height: inherit;background: #fff;}
+  .banner .bannerwrap {min-height: calc(100vh - 48px);width: 100%;height:100%;background: #fff;}
+  .banner .bannerwrap img{width: 100%;height:100%; min-height: calc(100vh - 48px);}
   footer {z-index: 0;height: 232px;position: relative;width: 100%;bottom: 0; clear:both;}
   .about-us-block article {-webkit-column-count: 2; -moz-column-count: 2;column-count: 2;}
   /** remove if you don't want parallax effect on header, banner, main content and footer **/
@@ -572,7 +577,7 @@ header.green {background: #ed1b2e;}
   .health-banner{ height: 450px; }
   .banner-image img {width: 110%;height: auto;}
   .top-text {width: 75%;}
-  .subscribe-block .top-text, .subscribe-form {width: 70%;}
+  .subscribe-block .top-text, .subscribe-form {width: 100%;}
   footer {height: 249px;}
   main {margin-bottom: 249px;}
   .big-image figure {height: 430px;}
@@ -891,7 +896,7 @@ header.green {background: #ed1b2e;}
   .menu-block {width: 100%;margin: -42px 0 0 0;}
   .nav-right-btn {width: 70%;margin: auto;float: none;}
   .logo-block {margin-bottom: 0;z-index: 1;}
-  header {padding: 13px 0 0;position: relative;z-index: 11;}
+  header {padding: 7px 0 0;position: relative; height:50px; z-index: 11;}
   .collapse {transition: none;}
   .navbar-toggle{z-index:1000;}
   .navbar-toggle .icon-bar {width: 15px;height: 1px;border-radius: 0;}
@@ -1064,7 +1069,7 @@ header.green {background: #ed1b2e;}
   .newsletter-popup .modal-body p {font-size: 13px;line-height: 19px;}
   .modal-dialog {margin: 10% 5%;}
   .newsletter-popup .modal-body:before {content: "";background: rgba(255,255,255,0.6);width: 100%;height: 100%;position: absolute;left: 0;top: 0;z-index: 0;}
-  #owl-demo .item img {width: 100%;}
+  #owl-demo .item img {height: 100%;}
   .full-width-video {height: 300px;}
   img.video-bg {width: 150%;}
   .carousel-feature .carousel-caption p {line-height: 18px;font-size: 13px;}
@@ -1243,7 +1248,7 @@ header.green {background: #ed1b2e;}
 
 .food-item-wrap h5 {
       color: #000;
-	  font-size:19px;
+	  font-size:15px;
     font-family: "Montserrat-Light", sans-serif;
     font-weight: bold;
 }
@@ -1421,15 +1426,19 @@ header.green {background: #ed1b2e;}
 }
 
 .food-item-wrap .rating {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
+
+    margin: 1px 0 10px 0px;
+	float:left;
+    /*left: 20px;*/
 }
 
 .food-item-wrap .review {
-    right: 30px;
-    position: absolute;
-    bottom: 30px;
+   /* right: 30px;*/
+   
+	float:left;
+	color:#000;
+    margin: 1px 0 10px 10px;
+	
 }
 
 .food-item-wrap .review a {
@@ -1455,9 +1464,19 @@ position: absolute;
     width: 100%;
     background: rgba(0,0,0,0.7);
     z-index: 99;}
-
+	
+	
+	.food-item-wrap .overlay b{
+	    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 100%;    
+    top: calc(50% - 20px);
+}
 @media (max-width: 543px) {
-    ...
+   .login-modal-container{width:270px;}
+   div.social-wrap button{    padding: 0 0px !important;
+    font-size: 12px !important;}
 }
 
 @media (min-width: 544px) and (max-width: 767px) {
@@ -1537,3 +1556,270 @@ position: absolute;
 	.top-search{ margin-top:5px;}
 	.top-search input{ width:85%;}
 	.top-search i{  display:inline-block; line-height:38px;  font-size:20px; color:green; }
+	
+	#mySearch .search-section form input{
+		border:0;
+    padding: 10px 5%;
+    margin-top: 0px;
+	font-size:24px;
+	    box-shadow: none !important;
+    background: #fff url(../images/search-icon.png) no-repeat;
+    background-position: 0 13px;
+		}
+	
+	
+	/*.search-popup{display:none;}*/
+	
+	/* The Overlay (background) */
+.overlay1 {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0;
+    width: 100%;	
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 81px;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+    background-color: #fff; /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;   
+    width: 100%; /* 100% width */
+   margin-bottom:100px;
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay1 a {
+    padding: 0px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay1 a:hover, .overlay1 a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay1 .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 35px;
+    font-size: 24px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-width: 767px) {
+	.overlay1 {top:61px;}
+    .overlay1 a {font-size: 20px}
+    .overlay1 .closebtn {
+        font-size: 24px;
+        top: 5px;
+        right: 35px;
+    }
+}
+.m_t_40{ margin-top:40px;}
+.modal{ background: rgba(0,0,0,0.7); }
+.food-categories .food-item-wrap{ 
+   border:0;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: none;
+    }
+	.food-categories .food-item-wrap .figure-wrap{height:130px;}
+	.food-categories img{ width:100%;}
+	.food-categories .food-item-wrap .overlay{
+		font-size:12px;
+		padding-top:25%;
+		}
+		
+		.f-category .food-item-wrap .overlay{padding-top:25%;}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		div.social-wrap button {
+   padding: 0 45px 0;
+    height: 35px;
+    background: none;
+    border: none;
+    display: block;
+    background-size: 35px 35px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: white;
+    font-family:"Merriweather Sans", sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+    width:100%;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+   /* text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;*/
+}
+button#facebook {
+    border-color: #2d5073;
+    background-color: #3b5998;
+    background-image: url(../images/facebook-icon.png);
+}
+button#twitter {
+    border-color: #007aa6;
+    background-color: #008cbf;
+    background-image: url(https://g.twimg.com/Twitter_logo_white.png);
+}
+button#googleplus {
+    border-color: #d93d24;
+    background-color: #f3553c;
+   /* text-shadow: #333 -1px -1px 0;*/
+    background-image:url(../images/google-plus-xxl.png);
+}
+
+.autocomplete{
+	   display: inline-block;
+    border-radius: 1px;
+	margin: 0 1px;
+    width: 99.8%;
+    background: #fff;
+    box-shadow: 0px 0px 1px 1px #ddd;
+	}
+	.autocomplete option{padding:10px;}
+	.autocomplete option:before{content:"\f041"; padding:10px;    font: normal normal normal 14px/1 FontAwesome;}
+	.autocomplete option:hover{background:#f8f8f9;}
+
+
+
+.login-button-container {
+    margin-top: 10px;
+    margin-bottom: 10px;}
+	div.login-modal-container p{ margin-bottom: 15px;}
+	
+	@media (max-width: 768px){
+
+.login-facebook {
+   margin:10px 0 !important
+}
+.login-button1 {
+    width: 100% !important;
+	padding-left: 35% !important;;
+	max-width:100% !important;;
+    display:block;
+}
+	}
+
+
+.login-facebook {
+    margin-bottom: 10px;
+	margin-right:12px;
+}
+
+.login-button1 {
+    display:inline-block;
+       line-height: 20px;
+    width: 49%;
+    max-width: 162px;
+    padding-left: 16%;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    color: #696b79;
+    height: 50px;
+    border: 1px solid #bfc0c6;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.login-fb-logo, .login-gplus-logo {  
+    width: 28px;
+    top: 10px;
+}
+
+
+.login-fb-logo, .login-gplus-logo {
+    height: 29px;
+    position: absolute;
+    left: 15px;
+}
+
+.fb-icon {
+    background: url(../images/fb-icon.jpg) no-repeat 0 0;  
+}
+.google-icon {
+    background: url(../images/google-icon.jpg) no-repeat 0 0;  
+}
+
+.login-button-info-text {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+.login-info-text {
+    color: #94969f;
+    font-size: 12px;
+	text-align:center;
+}
+
+.login-input-container {
+    
+    border: 1px solid #bfc0c6;
+    border-radius: 5px;
+    padding: 0;}
+	.login-input-item {
+    position: relative;
+}
+.login-user-input-email {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.login-user-input-password {
+    border-top: 1px solid #d5d6d9 !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.login-user-input {
+    display: block;
+    color: #282c3f;
+    padding-right: 40px;
+    font-size: 15px;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+}
+div.login-modal-container input:focus{border:0;}
