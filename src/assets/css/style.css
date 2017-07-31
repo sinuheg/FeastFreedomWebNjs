@@ -1774,18 +1774,11 @@ button#googleplus {
     left: 15px;
 }
 
-.fb-icon {
-<<<<<<< HEAD
-    background: url(../images/fb-icon.jpg) no-repeat 0 0;  
-}
-.google-icon {
-    background: url(../images/google-icon.jpg) no-repeat 0 0;  
-=======
+.fb-icon { 
     background: url(../assets/images/fb-icon.jpg) no-repeat 0 0;  
 }
 .google-icon {
-    background: url(../assets/images/google-icon.jpg) no-repeat 0 0;  
->>>>>>> 754c08171faca912b36f14f709ef719adcf53c8b
+    background: url(../assets/images/google-icon.jpg) no-repeat 0 0;   
 }
 
 .login-button-info-text {
