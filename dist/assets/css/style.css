@@ -3,18 +3,7 @@
 @charset "utf-8";
 
 /*======================= # Typography ===========================*/
-@font-face {
-  font-family: "Montserrat-Regular";
-  src: url("../fonts/Montserrat-Regular.otf");
-}
-@font-face {
-  font-family: "Montserrat-Light";
-  src: url("../fonts/Montserrat-Light.otf");
-}
-@font-face {
-  font-family: "Montserrat-Bold";
-  src: url("../fonts/Montserrat-Bold.otf");
-}
+ 
 html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{background:transparent;border:0;/*font-size:100%;*/margin:0;outline:0;padding:0;vertical-align:baseline}
 article,aside,figure,footer,header,hgroup,nav,section{display:block}
  
@@ -1725,7 +1714,8 @@ button#googleplus {
 
     .pac-item{
         padding: 10px !important;
-        font-size: 14px !important;
+        font-size: 13px !important;
+        font-weight:  400 !important;
     }
     .pac-logo:after{
         display: none !important;
