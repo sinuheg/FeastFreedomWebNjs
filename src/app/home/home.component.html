@@ -52,8 +52,15 @@
     <div class="content">
       <form class="subscribe-form">
         <b>ENTER YOUR ADDRESS</b><br>
-        <input type="text" class="text-spx text-lt"  placeholder="Street address, City, State">
-        <button type="button" class="btn text-uppercase wow flipInX animated animated" style="visibility: visible; animation-name: flipInX;" onclick="window.location.href='/stores';">Find Food</button>
+        <input #textbox type="text" class="text-spx text-lt" placeholder="Street address, City, State"
+        [options]='options' (setAddress) = "getAddress($event)"(street_number) = 'street_number=$event'(street)= 'street=$event'
+        (city)= 'city=$event'(state)='state=$event'(district)='district=$event'(country)='country=$event'
+        (postal_code)='postal_code=$event'(lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' 
+        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event'  (utc_offset)='utc_offset=$event' 
+        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event'  (CountryCodes)='CountryCodes=$event'
+        id="autocomplete" ng2-google-place-autocomplete/> 
+        <button type="button" class="btn text-uppercase wow flipInX animated animated" style="visibility: visible; animation-name: flipInX;" 
+        (click)="btnFindFood(textbox.value,'xxx')" >Find Food</button>
       </form>
     </div>
   </div>

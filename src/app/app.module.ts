@@ -9,8 +9,11 @@ import { HomeComponent } from './home/home.component';
 
 //services
 import { RestaurantService } from './services/restaurant.service';
-import { CustomersComponent } from './customers/customers.component';
-import { UsersComponent } from './users/users.component';
+
+
+import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 //new comment sss
 const ROUTES = [
@@ -26,10 +29,6 @@ const ROUTES = [
   {
     path: 'stores',
     component: StoresComponent
-  },
-  {
-    path:'customers',
-    component: CustomersComponent
   }
 ];
 
@@ -37,14 +36,16 @@ const ROUTES = [
   declarations: [
     AppComponent,
     StoresComponent,
-    HomeComponent,
-    CustomersComponent,
-    UsersComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpModule
+    HttpModule,GooglePlaceModule,InfiniteScrollModule,
+     LocalStorageModule.withConfig({
+            prefix: 'my-app',
+            storageType: 'localStorage'
+        })
   ],
   providers: [RestaurantService],
   bootstrap: [AppComponent]

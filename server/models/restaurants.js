@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var restaurants = mongoose.model('restaurant', new Schema({
+var restaurants = mongoose.model('restaurants', new Schema({
     restaurantId: Number,
     name: String,
     rate: Number,
@@ -10,12 +10,6 @@ var restaurants = mongoose.model('restaurant', new Schema({
     productTime: String,
     coverPhoto: Buffer,
     closed: Boolean
-}));
+}),"restaurants");
 
-var Country = mongoose.model('Country', new Schema({
-    name: String,
-    countrycode: String
-}), 'Country');
-
-module.exports.restaurants = restaurants;
-module.exports.Country = Country;
+module.exports = restaurants

@@ -5,14 +5,12 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const database = require('./server/config/database');
 
-//this is the new change
 const mongoose = require('mongoose');
 mongoose.connect(database.remoteUrl);
 
 //api
 const api = require('./server/routes/api');
 
-//init express
 const app = express();
 
 //parsers for post data
