@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 //services
-import { RestaurantService } from '../services/restaurant.service';
+import { RestaurantService } from '../../services/restaurant.service';
+//components
+import { CategoriesComponent } from '../../components/modals/categories/categories.component';
+import { LoginComponent } from '../../components/modals/login/login.component';
 
 @Component({
   selector: 'app-stores',
@@ -14,7 +18,7 @@ export class StoresComponent implements OnInit {
   infiniteScorllStatus=true;
   gaddress: any="";
 
-  constructor(private restaurantService: RestaurantService) { }
+  constructor(private restaurantService: RestaurantService, private modalService: NgbModal) { }
 
   ngOnInit() {
     // this.restaurantService.getRestaurants().subscribe(data => 
@@ -44,4 +48,13 @@ export class StoresComponent implements OnInit {
         }  
      });
   }
+
+  openSearch(){
+    const modalRef = this.modalService.open(CategoriesComponent,{size: 'lg'});
+  }
+
+  openLogin(){
+    const modalRef = this.modalService.open(LoginComponent);
+  }
+
 }
