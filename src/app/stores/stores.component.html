@@ -56,11 +56,12 @@
           <div class="food-item-wrap">
             <a href="#">
               <div class="figure-wrap bg-image" data-image-src="assets/images/food1.jpg" [ngStyle]="{'background': 'url(assets/images/food' + ( (item.restaurantId % 3) + 1) + '.jpg) center center / cover no-repeat'}">
+              <div class="overlay" *ngIf="item.closed"><b>Closed</b></div>
               </div>
               <div class="content">
                 <h5>{{item.name}}</h5>
                 <div class="product-name">{{item.productName}}</div>
-                <div class="product-time">Opent At {{item.productTime}}</div>
+                <div class="product-time">{{item.productTime}}</div>
                 <div class="rating"> 
                   <i class="fa" [ngClass] = "{'fa-star': item.rate >= 1, 'fa-star-o': item.rate < 1}"></i>
                   <i class="fa" [ngClass] = "{'fa-star': item.rate >= 2, 'fa-star-o': item.rate < 2}"></i>
@@ -69,7 +70,7 @@
                   <i class="fa" [ngClass] = "{'fa-star': item.rate >= 5, 'fa-star-o': item.rate < 5}"></i>
                 </div>
                 <div class="review pull-right">{{item.review}}</div>
-                <div class="overlay" *ngIf="item.closed"><b>Closed</b></div>
+                
               </div>
             </a>
           </div>
