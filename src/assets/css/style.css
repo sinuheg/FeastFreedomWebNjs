@@ -17,7 +17,7 @@
 }
 html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{background:transparent;border:0;/*font-size:100%;*/margin:0;outline:0;padding:0;vertical-align:baseline}
 article,aside,figure,footer,header,hgroup,nav,section{display:block}
-img,object,embed{}
+ 
 img{vertical-align: bottom;}
 h1{font-weight: bold;}
 html{overflow-y:scroll}
@@ -56,8 +56,8 @@ ins{background-color:#fcd700;color:#000;text-decoration:none}
 mark{background-color:#fcd700;color:#000;font-style:italic;font-weight:700}
 input[type=radio],.ie6 input{vertical-align:text-bottom}
 .text-lt{font-family: "Montserrat-Light", sans-serif;}
-.text-sp{letter-spacing: 0.05em;}
-.text-spx{letter-spacing: 0.1em;}
+/* .text-sp{letter-spacing: 0.05em;} */
+/* .text-spx{letter-spacing: 0.1em;} */
 .font-reg { font-family: 'Montserrat-Regular', sans-serif;}
 
 /*=============== # Core styles =======================*/
@@ -210,8 +210,8 @@ header.green .border-btn-small:hover {background: #fff;color: #ed1b2e;}
 
 /*======================= # Subscribe section  ==================*/
 .subscribe-form input, .subscribe-form select, .subscribe-form textarea {color: #b9b9b9;font-size: 15px;}
-.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 21px 25px;width: 70.7%;float: left;border-right: 0;}
-.subscribe-form button{width: 29.3%;float: left;}
+.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 21px 25px;width: 100%;float: left;border-right: 0;}
+.subscribe-form button{width: 29.3%;float: right; position: relative; margin-top: -62px;}
 .subscribe-form b{color:#000;}
 .subscribe-form {width:50%;letter-spacing: 0.1em;}
 .subscribe-form button {/*border-top-left-radius: 0;border-bottom-left-radius: 0;*/ border-radius:0; padding:19.6px 20px;}
@@ -835,6 +835,9 @@ header.green {background: #ed1b2e;}*/
 }
 
 @media (max-width: 768px){
+    .subscribe-form button{
+        margin-top: -35px !important;
+    }
 	.right-nav{ margin-top:0px;}
 	.search-section form input{margin-top:0px;}
 	.home-banner1.home-banner .banner-text{top:inherit; width:inherit;}
@@ -927,7 +930,7 @@ header.green {background: #ed1b2e;}*/
   .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li.active>a, .navbar-default .navbar-nav>li.current-menu-item>a{color: #fff;background: #ed1b2e;}
   .media-partner {padding: 20px 0 0;}
   .partner-item, .right-form-block fieldset, .video-text a, .review-info, .pricing-block .top-text-header {margin-bottom: 15px;}
-  .btn, input[type=submit], button {/*padding: 5px 22px;*/}
+  /*.btn, input[type=submit], button {padding: 5px 22px;}*/
   .big-buttons-group .border-btn-x-big {margin: 0 0 15px;}
   .map-block, .map-wrap {height: 260px;overflow: hidden;}
   .contact-form .location img, .contact-form .phone img {margin: 0 10px 10px 0;top: 6px;}
@@ -1715,11 +1718,18 @@ button#googleplus {
     background: #fff;
     box-shadow: 0px 0px 1px 1px #ddd;
 	}
-	.autocomplete option{padding:10px;}
-	.autocomplete option:before{content:"\f041"; padding:10px;    font: normal normal normal 14px/1 FontAwesome;}
+	.autocomplete option{padding:15px;}
+	.autocomplete option:before{content:"\f041"; padding:15px;    font: normal normal normal 18px/1 FontAwesome;}
 	.autocomplete option:hover{background:#f8f8f9;}
 
 
+    .pac-item{
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+    .pac-logo:after{
+        display: none !important;
+    }
 
 .login-button-container {
     margin-top: 10px;
@@ -1775,10 +1785,10 @@ button#googleplus {
 }
 
 .fb-icon { 
-    background: url(../assets/images/fb-icon.jpg) no-repeat 0 0;  
+    background: url(../images/fb-icon.jpg) no-repeat 0 0;  
 }
 .google-icon {
-    background: url(../assets/images/google-icon.jpg) no-repeat 0 0;   
+    background: url(../images/google-icon.jpg) no-repeat 0 0;   
 }
 
 .login-button-info-text {
@@ -1823,3 +1833,5 @@ button#googleplus {
     padding: 15px;
 }
 div.login-modal-container input:focus{border:0;}
+
+
