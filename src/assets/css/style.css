@@ -199,8 +199,8 @@ header.green .border-btn-small:hover {background: #fff;color: #ed1b2e;}
 
 /*======================= # Subscribe section  ==================*/
 .subscribe-form input, .subscribe-form select, .subscribe-form textarea {color: #b9b9b9;font-size: 15px;}
-.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 21px 25px;width: 100%;float: left;border-right: 0;}
-.subscribe-form button{width: 29.3%;float: right; position: relative; margin-top: -62px;}
+.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 20px 25px;width: 100%;float: left;border-right: 0;}
+.subscribe-form button{width: 29.3%;float: right; position: relative; margin-top: -59px;}
 .subscribe-form b{color:#000;}
 .subscribe-form {width:50%;letter-spacing: 0.1em;}
 .subscribe-form button {/*border-top-left-radius: 0;border-bottom-left-radius: 0;*/ border-radius:0; padding:19.6px 20px;}
@@ -825,7 +825,7 @@ header.green {background: #ed1b2e;}*/
 
 @media (max-width: 768px){
     .subscribe-form button{
-        margin-top: -35px !important;
+        margin-top: -33px !important;
     }
 	.right-nav{ margin-top:0px;}
 	.search-section form input{margin-top:0px;}

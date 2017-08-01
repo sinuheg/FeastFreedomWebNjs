@@ -1,0 +1,101 @@
+<!-- ============== Header starts ============== -->
+<header>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- ============== Left logo block starts ============== -->
+      <div class="col-xs-5 col-sm-3 logo-block">
+        <figure><a href="/home"><img class="img-responsive" src="assets/images/logo.png" alt="Logo" /></a></figure>
+      </div>
+      <!-- ============== Left logo block ends ============== -->
+      <div class="col-sm-2 col-lg-1 asap hidden-xs"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ASAP <i class="fa fa-arrow-circle-right"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="fa fa-clock-o"></i> ASAP <i class="fa fa-check pull-right green"></i></a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="fa fa-calendar"></i> Schedule Order</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 col-lg-5 top-search hidden-xs"> <i class="fa fa-map-marker pull-left" onClick="openSearch()"></i>
+        <input type="text" value="{{gaddress}}" style="border:0; border-bottom:solid 1px #ebebeb;">
+      </div>
+      <div class="col-xs-7 col-lg-3 col-sm-4 pull-right text-right right-nav">
+        <a (click) = "openLogin()" style="color:#4ea950; padding:0 5px; cursor:pointer">SIGN IN </a>
+        <a class="btn border-btn-small" href="#">Register</a> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="border:none;"><i class="fa fa-shopping-cart"></i></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#">
+              <h4>There's nothing in your cart</h4>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- ============== Main navigation ends ============== -->
+    </div>
+  </div>
+</header>
+<!-- ============== Header ends ============== -->
+
+
+<div class="search-section">
+  <a (click)="openSearch()">
+    <form>
+      <input type="text" placeholder="Search for restaurant or cusine">
+    </form>
+  </a>
+</div>
+<main class="inner">
+  <!-- main content starts -->
+  <section class="popular">
+    <div class="container">
+      <div class="title text-xs-center m-b-30">
+        <h2>Kitchens</h2>
+      </div>
+      <div class="row" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="10" (scrolled)="onScrollDown()">
+        <!-- Each popular food it
+          em starts -->
+        <div class="col-xs-12 col-sm-6 col-md-3 food-item" *ngFor="let item of restaurants">
+
+          <div class="food-item-wrap">
+            <a href="#">
+              <div class="figure-wrap bg-image" data-image-src="assets/images/food1.jpg" [ngStyle]="{'background': 'url(assets/images/food' + ( (item.restaurantId % 3) + 1) + '.jpg) center center / cover no-repeat'}">
+                <div class="overlay" *ngIf="item.closed"><b>Closed</b></div>
+              </div>
+              <div class="content">
+                <h5>{{item.name}}</h5>
+                <div class="product-name">{{item.productName}}</div>
+                <div class="product-time">{{item.productTime}}</div>
+                <div class="rating">
+                  <i class="fa" [ngClass]="{'fa-star': item.rate >= 1, 'fa-star-o': item.rate < 1}"></i>
+                  <i class="fa" [ngClass]="{'fa-star': item.rate >= 2, 'fa-star-o': item.rate < 2}"></i>
+                  <i class="fa" [ngClass]="{'fa-star': item.rate >= 3, 'fa-star-o': item.rate < 3}"></i>
+                  <i class="fa" [ngClass]="{'fa-star': item.rate >= 4, 'fa-star-o': item.rate < 4}"></i>
+                  <i class="fa" [ngClass]="{'fa-star': item.rate >= 5, 'fa-star-o': item.rate < 5}"></i>
+                </div>
+                <div class="review pull-right">{{item.review}}</div>
+
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div class="modal fade in" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="login-modal-container">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <h3>Login to Your Account</h3>
+      <form>
+        <input type="text" name="user" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+      </form>
+      <div class="login-help"> <a href="#">Register</a> <a href="#" class="text-right">Forgot Password</a> </div>
+    </div>
+  </div>
+</div>

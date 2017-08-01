@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http'
 
-import { AppComponent } from './app.component';
-import { StoresComponent } from './stores/stores.component';
-import { HomeComponent } from './home/home.component';
+//libraries
+import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //services
 import { RestaurantService } from './services/restaurant.service';
 
-
-import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
-import { LocalStorageModule } from 'angular-2-local-storage';
-import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+//components
+import { AppComponent } from './app.component';
+import { StoresComponent } from './components/stores/stores.component';
+import { HomeComponent } from './components/home/home.component';
+import { CategoriesComponent } from './components/modals/categories/categories.component';
+import { LoginComponent } from './components/modals/login/login.component';
 
 //new comment sss
 const ROUTES = [
@@ -36,16 +40,25 @@ const ROUTES = [
   declarations: [
     AppComponent,
     StoresComponent,
-    HomeComponent
+    HomeComponent,
+    CategoriesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpModule,GooglePlaceModule,InfiniteScrollModule,
-     LocalStorageModule.withConfig({
+    HttpModule,
+    GooglePlaceModule,
+    InfiniteScrollModule,
+    LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'
-        })
+        }),
+    NgbModule.forRoot()
+  ],
+  entryComponents: [
+    CategoriesComponent,
+    LoginComponent
   ],
   providers: [RestaurantService],
   bootstrap: [AppComponent]

@@ -9,7 +9,10 @@
         </div>
         <!-- ============== Left logo block ends ============== -->
         
-        <div class="col-xs-7 col-sm-6 pull-right text-right right-nav"> <a href="#" data-toggle="modal" data-target="#login-modal" style="color:#4ea950; padding:0 5px">SIGN IN </a> <a class="btn border-btn-small" href="#">Register</a> </div>
+        <div class="col-xs-7 col-sm-6 pull-right text-right right-nav"> 
+          <a (click) = "openLogin()" style="color:#4ea950; padding:0 5px; cursor:pointer">SIGN IN </a> 
+          <a class="btn border-btn-small" href="#">Register</a> 
+        </div>
         <!-- ============== Main navigation ends ============== --> 
       </div>
     </div>
@@ -131,41 +134,3 @@
     <!-- ============== testimonials block starts ============== --> 
     
   </main>
-
-
-  <div class="modal fade in" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow:hidden;" >
-  <div class="modal-dialog">
-    <div class="login-modal-container"> 
-      <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>-->
-      <div class="text-center">
-        <h3>Login to Feast Freedom</h3>
-      </div>
-      <p class="login-button-info-text login-info-text">EASILY USING</p>
-      <div class="login-button-container">
-        <button class="login-facebook login-button1"><span class="fb-icon login-fb-logo"></span><!-- react-text: 11 -->FACEBOOK<!-- /react-text --></button>
-        <button class="login-google login-button1" id="gPlusLogin"><span class="google-icon login-gplus-logo"></span><!-- react-text: 14 -->GOOGLE<!-- /react-text --></button>
-      </div>
-      <div class="social-wrap a">
-        <p class="login-info-text">- OR USING EMAIL -</p>
-        <!-- <button id="facebook">Sign in with Facebook</button>
-   
-    <button id="googleplus">Sign in with Google</button>--> 
-      </div>
-      <form>
-        <fieldset class="login-input-container">
-          <div class="login-input-item">
-            <input type="email" class="login-user-input-email login-user-input" name="email" placeholder="Your Email Address">
-          </div>
-          <div class="login-input-item">
-            <input type="password" class="login-user-input-password login-user-input" name="password" placeholder="Enter Password">
-          </div>
-          <input type="hidden" >
-        </fieldset>
-        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-      </form>
-      <div class="login-help"> <a href="#" class="pull-left">Forgot Password</a> <span class="pull-right">New to Feast? <a href="#">Create an account</a></span>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
-</div>
