@@ -17,7 +17,9 @@ import { AppComponent } from './app.component';
 import { StoresComponent } from './components/stores/stores.component';
 import { HomeComponent } from './components/home/home.component';
 import { CategoriesComponent } from './components/modals/categories/categories.component';
-import { LoginComponent } from './components/modals/login/login.component';
+import { LoginComponent } from './components/modals/login/login.component'; 
+import { KitchensetupComponent } from './kitchen/kitchensetup/kitchensetup.component';
+import { KitchenverifyComponent } from './kitchen/kitchenverify/kitchenverify.component';
 
 //new comment sss
 const ROUTES = [
@@ -33,6 +35,10 @@ const ROUTES = [
   {
     path: 'stores',
     component: StoresComponent
+  },
+  {
+    path: 'kitchensetup',
+    component: KitchensetupComponent
   }
 ];
 
@@ -42,7 +48,9 @@ const ROUTES = [
     StoresComponent,
     HomeComponent,
     CategoriesComponent,
-    LoginComponent
+    LoginComponent, 
+    KitchensetupComponent,
+    KitchenverifyComponent
   ],
   imports: [
     BrowserModule,
