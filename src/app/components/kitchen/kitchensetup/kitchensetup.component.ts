@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {LoginComponent} from '../../components/modals/login/login.component'
+import {LoginComponent} from '../../../components/modals/login/login.component'
 
 @Component({
   selector: 'app-kitchensetup',
