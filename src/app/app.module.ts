@@ -17,7 +17,9 @@ import { AppComponent } from './app.component';
 import { StoresComponent } from './components/stores/stores.component';
 import { HomeComponent } from './components/home/home.component';
 import { CategoriesComponent } from './components/modals/categories/categories.component';
-import { LoginComponent } from './components/modals/login/login.component';
+import { LoginComponent } from './components/modals/login/login.component'; 
+import { KitchensetupComponent } from './components/kitchen/kitchensetup/kitchensetup.component';
+import { KitchenverifyComponent } from './components/kitchen/kitchenverify/kitchenverify.component';
 
 import { FormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
@@ -39,6 +41,10 @@ const ROUTES = [
   {
     path: 'stores',
     component: StoresComponent
+  },
+  {
+    path: 'kitchensetup',
+    component: KitchensetupComponent
   }
 ];
 
@@ -49,7 +55,10 @@ const ROUTES = [
     HomeComponent,
     CategoriesComponent,
     LoginComponent,
-    GoogleSignInComponent
+    GoogleSignInComponent,
+    LoginComponent, 
+    KitchensetupComponent,
+    KitchenverifyComponent
   ],
   imports: [
     BrowserModule,
