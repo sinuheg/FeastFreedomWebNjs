@@ -124,7 +124,7 @@ label {cursor: default;}
     font-size: 14px;
     /* background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4d90fe), to(#4787ed)); */
 }
-.modal-dialog{margin:7% auto;}
+/* .modal-dialog{margin:7% auto;} */
 
 /*=============== # Transition effects  ===================*/
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .radio-btn *, .pagination *, .btn-tags-big:after, .modal-content button.close, .blog-admin *, .plan-step *, .navbar-default .navbar-nav>li>a:after, .select-program-btn a:after, .select-program-btn *, .btn, .footer-links-col *, .feature-item-wrap *, .small-image-group img, .big-image img, .contact-left-text *, .popular-posts img, .menu-item-wrap *, .food-type h5 a, .nav-tabs>li>a:after, .food-image figure img, .food-image figure:before, .btn-tags, .sidebar-wrap *, input, select, textarea, .pricing-box *, .team-member-col *, .blog-single-wrap *, .bx-wrapper .bx-pager.bx-default-pager a, .instagram-image-row li img, .featured-menu-slider a, .featured-menu-slider a *, .blog-post-wrap *, .menu-sidebox-wrap *, ul.side-cat-list li a, .seller-list ul li a *, .ingredient-tags li a *, .menu-listing-wrap .menu-item-wrap, .menu-pegination ul li *, .cart-steps ul.steps a *, .sucess-story .bx-wrapper .bx-controls-direction a, .cat-wrap a *, .ui-slider .ui-slider-handle{transition: all .4s ease-in-out;-webkit-transition: all .4s ease-in-out;-moz-transition: all .4s ease-in-out;-o-transition: all .4s ease-in-out;-ms-transition: all .4s ease-in-out;}
@@ -1469,7 +1469,7 @@ position: absolute;
     top: calc(50% - 20px);
 }
 @media (max-width: 543px) {
-   .login-modal-container{width:270px;}
+   .login-modal-container{width:300px;}
    div.social-wrap button{    padding: 0 0px !important;
     font-size: 12px !important;}
 }
