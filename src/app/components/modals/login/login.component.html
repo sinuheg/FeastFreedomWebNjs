@@ -7,8 +7,16 @@
       </div>
       <p class="login-button-info-text login-info-text">EASILY USING</p>
       <div class="login-button-container">
-        <button class="login-facebook login-button1"><span class="fb-icon login-fb-logo"></span><!-- react-text: 11 -->FACEBOOK<!-- /react-text --></button>
-        <button class="login-google login-button1" id="gPlusLogin"><span class="google-icon login-gplus-logo"></span><!-- react-text: 14 -->GOOGLE<!-- /react-text --></button>
+        <button (click)="loginWithOptions()" class="login-facebook login-button1"><span class="fb-icon login-fb-logo"></span><!-- react-text: 11 -->FACEBOOK<!-- /react-text --></button>
+         <button  class="login-google login-button1" id="googleBtn"><span class="google-icon login-gplus-logo"></span> <!-- react-text: 11 --> GOOGLE <!-- /react-text --> </button> 
+        <!-- <google-signin
+  [clientId]="myClientId"
+  [width]="myWidth"
+  [theme]="myTheme"
+  [scope]="myScope"
+  [longTitle]="myLongTitle"
+  (googleSignInSuccess)="onGoogleSignInSuccess($event)">
+</google-signin>   -->
       </div>
       <div class="social-wrap a">
         <p class="login-info-text">- OR USING EMAIL -</p>

@@ -19,6 +19,12 @@ import { HomeComponent } from './components/home/home.component';
 import { CategoriesComponent } from './components/modals/categories/categories.component';
 import { LoginComponent } from './components/modals/login/login.component';
 
+import { FormsModule } from '@angular/forms';
+import { FacebookModule } from 'ngx-facebook';
+import {GoogleSignInComponent} from 'angular-google-signin';
+
+
+
 //new comment sss
 const ROUTES = [
   {
@@ -42,7 +48,8 @@ const ROUTES = [
     StoresComponent,
     HomeComponent,
     CategoriesComponent,
-    LoginComponent
+    LoginComponent,
+    GoogleSignInComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,8 @@ const ROUTES = [
     HttpModule,
     GooglePlaceModule,
     InfiniteScrollModule,
+     FormsModule,
+     FacebookModule.forRoot(),
     LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'
