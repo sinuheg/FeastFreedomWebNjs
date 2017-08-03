@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
     this.userTypeAddress2 = `'${value1}'\n`;
 
     if(value!=""){
+      
         localStorage.setItem("googleaddress", JSON.stringify({ street_number:this.street_number,  street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset,postal_code:this.postal_code }));
         this.router.navigate(['/stores']);
     }
