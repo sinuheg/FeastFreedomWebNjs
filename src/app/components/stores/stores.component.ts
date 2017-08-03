@@ -26,11 +26,7 @@ export class StoresComponent implements OnInit {
     //);
     var address = JSON.parse(localStorage.getItem("googleaddress"));
     // this.gaddress=address.street+', '+ address.city+' ,'+address.st+' ,'+address.co+' ,'+address.utc_offset
-<<<<<<< HEAD
     this.gaddress=address.street_number+', '+address.street+', '+ address.city+' ,'+address.st+' ,'+address.co;
-=======
-         this.gaddress=address.street+', '+ address.city+' ,'+address.st+' ,'+address.co;
->>>>>>> adc39ea2a866888457e0bb371731fb2d1ec10ad3
     let result; 
     this.restaurantService.getMyRestaurant(this.recordLimit,this.skipRecord).subscribe(data => {
     result = data;

@@ -6120,6 +6120,180 @@ exports.LocalStorageService = LocalStorageService;
 
 /***/ }),
 
+/***/ "../../../../angular-google-signin/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var GoogleSignInSuccess = (function () {
+    function GoogleSignInSuccess(googleUser) {
+        this.googleUser = googleUser;
+    }
+    return GoogleSignInSuccess;
+}());
+exports.GoogleSignInSuccess = GoogleSignInSuccess;
+var GoogleSignInFailure = (function () {
+    function GoogleSignInFailure() {
+    }
+    return GoogleSignInFailure;
+}());
+exports.GoogleSignInFailure = GoogleSignInFailure;
+var GoogleSignInComponent = (function () {
+    function GoogleSignInComponent() {
+        this.id = 'google-signin2';
+        this.googleSignInSuccess = new core_1.EventEmitter();
+        this.googleSignInFailure = new core_1.EventEmitter();
+    }
+    Object.defineProperty(GoogleSignInComponent.prototype, "width", {
+        get: function () {
+            return this._width.toString();
+        },
+        set: function (value) {
+            this._width = Number(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GoogleSignInComponent.prototype, "height", {
+        get: function () {
+            return this._height.toString();
+        },
+        set: function (value) {
+            this._height = Number(value);
+            gapi.load('', '');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GoogleSignInComponent.prototype, "longTitle", {
+        get: function () {
+            return this._longTitle.toString();
+        },
+        set: function (value) {
+            this._longTitle = Boolean(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GoogleSignInComponent.prototype, "fetchBasicProfile", {
+        get: function () {
+            return this._fetchBasicProfile.toString();
+        },
+        set: function (s) {
+            this._fetchBasicProfile = Boolean(s);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GoogleSignInComponent.prototype.ngAfterViewInit = function () {
+        this.auth2Init();
+        this.renderButton();
+    };
+    GoogleSignInComponent.prototype.auth2Init = function () {
+        var _this = this;
+        if (this.clientId == null)
+            throw new Error('clientId property is necessary. (<google-signin [clientId]="..."></google-signin>)');
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: _this.clientId,
+                cookie_policy: _this.cookiePolicy,
+                fetch_basic_profile: _this._fetchBasicProfile,
+                hosted_domain: _this.hostedDomain,
+                openid_realm: _this.openidRealm
+            });
+        });
+    };
+    GoogleSignInComponent.prototype.handleFailure = function () {
+        this.googleSignInFailure.next(new GoogleSignInFailure());
+    };
+    GoogleSignInComponent.prototype.handleSuccess = function (googleUser) {
+        this.googleSignInSuccess.next(new GoogleSignInSuccess(googleUser));
+    };
+    GoogleSignInComponent.prototype.renderButton = function () {
+        var _this = this;
+        gapi.signin2.render(this.id, {
+            scope: this.scope,
+            width: this._width,
+            height: this._height,
+            longtitle: this._longTitle,
+            theme: this.theme,
+            onsuccess: function (googleUser) { return _this.handleSuccess(googleUser); },
+            onfailure: function () { return _this.handleFailure(); }
+        });
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "scope", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "width", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "height", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "longTitle", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "theme", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "clientId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "cookiePolicy", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "fetchBasicProfile", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "hostedDomain", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], GoogleSignInComponent.prototype, "openidRealm", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], GoogleSignInComponent.prototype, "googleSignInSuccess", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], GoogleSignInComponent.prototype, "googleSignInFailure", void 0);
+    GoogleSignInComponent = __decorate([
+        core_1.Component({
+            selector: 'google-signin',
+            template: '<div [id]="id"></div>',
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush
+        }), 
+        __metadata('design:paramtypes', [])
+    ], GoogleSignInComponent);
+    return GoogleSignInComponent;
+}());
+exports.GoogleSignInComponent = GoogleSignInComponent;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../../../../angular2-infinite-scroll/angular2-infinite-scroll.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22391,6 +22565,1640 @@ exports.uuid = function (version) {
 
 /***/ }),
 
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-comment-embed/fb-comment-embed.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBCommentEmbedComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Embedded Comments
+ * @shortdesc Embedded comments component
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-comments
+ * @description
+ * Embedded comments are a simple way to put public post comments - by a Page or a person on Facebook - into the content of your web site or web page.
+ * Only public comments from Facebook Pages and profiles can be embedded.
+ * @usage
+ * ```html
+ * <fb-comment-embed href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185" width="500"></fb-comment-embed>
+ * ```
+ */
+var FBCommentEmbedComponent = (function (_super) {
+    __extends(FBCommentEmbedComponent, _super);
+    function FBCommentEmbedComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-comment-embed') || this;
+    }
+    return FBCommentEmbedComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBCommentEmbedComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-comment-embed',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBCommentEmbedComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBCommentEmbedComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'includeParent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentEmbedComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentEmbedComponent.prototype, "width", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBCommentEmbedComponent.prototype, "includeParent", void 0);
+//# sourceMappingURL=fb-comment-embed.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-comments/fb-comments.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBCommentsComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Comments
+ * @shortdesc Comments component
+ * @fbdoc https://developers.facebook.com/docs/plugins/comments
+ * @description
+ * The comments plugin lets people comment on content on your site using their Facebook account.
+ * People can choose to share their comment activity with their friends (and friends of their friends) on Facebook as well.
+ * The comments plugin also includes built-in moderation tools and social relevance ranking.
+ *
+ * @usage
+ * ```html
+ * <fb-comments></fb-comments>
+ * ```
+ */
+var FBCommentsComponent = (function (_super) {
+    __extends(FBCommentsComponent, _super);
+    function FBCommentsComponent(el, rnd) {
+        var _this = _super.call(this, el, rnd, 'fb-comments') || this;
+        /**
+         * The absolute URL that comments posted in the plugin will be permanently associated with.
+         * All stories shared on Facebook about comments posted using the comments plugin will link to this URL.
+         * Defaults to current URL.
+         */
+        _this.href = window.location.href;
+        return _this;
+    }
+    return FBCommentsComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBCommentsComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-comments',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBCommentsComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBCommentsComponent.propDecorators = {
+    'colorscheme': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'mobile': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'numposts': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'orderBy': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentsComponent.prototype, "colorscheme", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentsComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBCommentsComponent.prototype, "mobile", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Number)
+], FBCommentsComponent.prototype, "numposts", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentsComponent.prototype, "orderBy", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBCommentsComponent.prototype, "width", void 0);
+//# sourceMappingURL=fb-comments.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-follow/fb-follow.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBFollowComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Follow Button
+ * @shortdesc Follow button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/follow-button
+ * @description The Follow button lets people subscribe to the public updates of others on Facebook.
+ * @usage
+ * ```html
+ * <fb-follow href="https://www.facebook.com/zuck"></fb-follow>
+ * ```
+ */
+var FBFollowComponent = (function (_super) {
+    __extends(FBFollowComponent, _super);
+    function FBFollowComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-follow') || this;
+    }
+    return FBFollowComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBFollowComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-follow',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBFollowComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBFollowComponent.propDecorators = {
+    'colorScheme': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'kidDirectedSite': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'layout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showFaces': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "colorScheme", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBFollowComponent.prototype, "kidDirectedSite", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "layout", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "showFaces", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "size", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBFollowComponent.prototype, "width", void 0);
+//# sourceMappingURL=fb-follow.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-like/fb-like.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBLikeComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Like Button
+ * @shortdesc Like button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/like-button
+ * @description
+ * A single click on the Like button will 'like' pieces of content on the web and share them on Facebook.
+ * You can also display a Share button next to the Like button to let people add a personal message and customize who they share with.
+ * @usage
+ * ```html
+ * <fb-like href="https://www.facebook.com/zuck"></fb-like>
+ * ```
+ */
+var FBLikeComponent = (function (_super) {
+    __extends(FBLikeComponent, _super);
+    function FBLikeComponent(el, rnd) {
+        var _this = _super.call(this, el, rnd, 'fb-like') || this;
+        /**
+         * The absolute URL of the page that will be liked.
+         * Defaults to the current URL.
+         */
+        _this.href = window.location.href;
+        return _this;
+    }
+    return FBLikeComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBLikeComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-like',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBLikeComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBLikeComponent.propDecorators = {
+    'action': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'colorScheme': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'kidDirectedSite': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'layout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'ref': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'share': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showFaces': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "action", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "colorScheme", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBLikeComponent.prototype, "kidDirectedSite", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "layout", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "ref", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBLikeComponent.prototype, "share", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBLikeComponent.prototype, "showFaces", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "size", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBLikeComponent.prototype, "width", void 0);
+//# sourceMappingURL=fb-like.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-page/fb-page.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBPageComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Page Plugin
+ * @shortdesc Page plugin component
+ * @fbdoc https://developers.facebook.com/docs/plugins/page-plugin
+ * @description
+ * The Page plugin lets you easily embed and promote any Facebook Page on your website. Just like on Facebook, your visitors can like and share the Page without leaving your site.
+ * @usage
+ * ```html
+ * <fb-page href="https://facebook.com/facebook"></fb-page>
+ * ```
+ */
+var FBPageComponent = (function (_super) {
+    __extends(FBPageComponent, _super);
+    function FBPageComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-page') || this;
+    }
+    return FBPageComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBPageComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-page',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBPageComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBPageComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'height': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'tabs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'hideCover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showFacepile': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'hideCTA': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'smallHeader': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'adaptContainerWidth': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBPageComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Number)
+], FBPageComponent.prototype, "width", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Number)
+], FBPageComponent.prototype, "height", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBPageComponent.prototype, "tabs", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPageComponent.prototype, "hideCover", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPageComponent.prototype, "showFacepile", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPageComponent.prototype, "hideCTA", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPageComponent.prototype, "smallHeader", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPageComponent.prototype, "adaptContainerWidth", void 0);
+//# sourceMappingURL=fb-page.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-post/fb-post.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBPostComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Embedded Posts
+ * @shortdesc Embedded post component
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-posts
+ * @description
+ * Embedded Posts are a simple way to put public posts - by a Page or a person on Facebook - into the content of your web site or web page.
+ * Only public posts from Facebook Pages and profiles can be embedded.
+ * @usage
+ * ```html
+ * <fb-post href="https://www.facebook.com/20531316728/posts/10154009990506729/"></fb-post>
+ * ```
+ */
+var FBPostComponent = (function (_super) {
+    __extends(FBPostComponent, _super);
+    function FBPostComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-post') || this;
+    }
+    return FBPostComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBPostComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-post',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBPostComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBPostComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showText': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBPostComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBPostComponent.prototype, "width", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBPostComponent.prototype, "showText", void 0);
+//# sourceMappingURL=fb-post.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-quote/fb-quote.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBQuoteComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Quote Plugin
+ * @shortdesc Quote plugin component
+ * @fbdoc https://developers.facebook.com/docs/plugins/quote
+ * @description
+ * The quote plugin lets people select text on your page and add it to their share, so they can tell a more expressive story.
+ * Note that you do not need to implement Facebook login or request any additional permissions through app review in order to use this plugin.
+ * @usage
+ * ```html
+ * <fb-quote></fb-quote>
+ * ```
+ */
+var FBQuoteComponent = (function (_super) {
+    __extends(FBQuoteComponent, _super);
+    function FBQuoteComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-quote') || this;
+    }
+    return FBQuoteComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBQuoteComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-quote',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBQuoteComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBQuoteComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'layout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBQuoteComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBQuoteComponent.prototype, "layout", void 0);
+//# sourceMappingURL=fb-quote.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-save/fb-save.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBSaveComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Save Button
+ * @shortdesc Save button component.
+ * @fbdoc https://developers.facebook.com/docs/plugins/save
+ * @description
+ * The Save button lets people save items or services to a private list on Facebook, share it with friends, and receive relevant notifications.
+ * @usage
+ * ```html
+ * <fb-save uri="https://github.com/zyra/ng2-facebook-sdk/"></fb-save>
+ * ```
+ */
+var FBSaveComponent = (function (_super) {
+    __extends(FBSaveComponent, _super);
+    function FBSaveComponent(el, rnd) {
+        var _this = _super.call(this, el, rnd, 'fb-save') || this;
+        /**
+         * The absolute link of the page that will be saved.
+         * Current Link/Address
+         */
+        _this.uri = window.location.href;
+        return _this;
+    }
+    return FBSaveComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBSaveComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-save',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBSaveComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBSaveComponent.propDecorators = {
+    'uri': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBSaveComponent.prototype, "uri", void 0);
+//# sourceMappingURL=fb-save.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-send/fb-send.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBSendComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Send Button
+ * @shortdesc Send button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/send-button
+ * @description
+ * The Send button lets people privately send content on your site to one or more friends in a Facebook message.
+ * @usage
+ * ```html
+ * <fb-send href="https://github.com/zyra/ng2-facebook-sdk/"></fb-send>
+ * ```
+ */
+var FBSendComponent = (function (_super) {
+    __extends(FBSendComponent, _super);
+    function FBSendComponent(el, rnd) {
+        var _this = _super.call(this, el, rnd, 'fb-send') || this;
+        /**
+         * The absolute URL of the page that will be sent. Defaults to the current URL.
+         */
+        _this.href = window.location.href;
+        return _this;
+    }
+    return FBSendComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBSendComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-send',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBSendComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBSendComponent.propDecorators = {
+    'colorScheme': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'kidDirectedSite': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'ref': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBSendComponent.prototype, "colorScheme", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBSendComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBSendComponent.prototype, "kidDirectedSite", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBSendComponent.prototype, "ref", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBSendComponent.prototype, "size", void 0);
+//# sourceMappingURL=fb-send.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-share/fb-share.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBShareComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Share Button
+ * @shortdesc Share button component
+ * @fbdoc https://developers.facebook.com/docs/plugins/share-button
+ * @description
+ * The Share button lets people add a personalized message to links before sharing on their timeline, in groups, or to their friends via a Facebook Message.
+ * @usage
+ * ```html
+ * <fb-share href="https://github.com/zyra/ng2-facebook-sdk/"></fb-share>
+ * ```
+ */
+var FBShareComponent = (function (_super) {
+    __extends(FBShareComponent, _super);
+    function FBShareComponent(el, rnd) {
+        return _super.call(this, el, rnd, 'fb-share-button') || this;
+    }
+    return FBShareComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBShareComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-share',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBShareComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBShareComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'layout': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'mobileIframe': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBShareComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBShareComponent.prototype, "layout", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBShareComponent.prototype, "mobileIframe", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBShareComponent.prototype, "size", void 0);
+//# sourceMappingURL=fb-share.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fb-video/fb-video.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fbml_component__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fbml-component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBVideoComponent; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * @name Embedded Video
+ * @shortdesc Component to embed Facebook videos
+ * @fbdoc https://developers.facebook.com/docs/plugins/embedded-video-player
+ * @description Component to embed Facebook videos and control them.
+ * @usage
+ * ```html
+ * <!-- basic usage -->
+ * <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/"></fb-video>
+ *
+ * <!-- event emitters -->
+ * <fb-video href="https://www.facebook.com/facebook/videos/10153231379946729/" (paused)="onVideoPaused($event)"></fb-video>
+ * ```
+ *
+ * To manually interact with the video player, fetch it using `ViewChild`.
+ *
+ * ```ts
+ * import { Component, ViewChild } from '@angular/core';
+ * import { FBVideoComponent } from 'ng2-facebook-sdk';
+ *
+ * @Component(...)
+ * export class MyComponent {
+ *
+ *   @ViewChild(FBVideoComponent) video: FBVideoComponent;
+ *
+ *   ngAfterViewInit() {
+ *     this.video.play();
+ *     this.video.pause();
+ *     this.video.getVolume();
+ *   }
+ *
+ * }
+ *
+ * ```
+ */
+var FBVideoComponent = (function (_super) {
+    __extends(FBVideoComponent, _super);
+    function FBVideoComponent(el, rnd) {
+        var _this = _super.call(this, el, rnd, 'fb-video') || this;
+        /**
+         * Fired when video starts to play.
+         */
+        _this.startedPlaying = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Fired when video pauses.
+         */
+        _this.paused = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         *
+         Fired when video finishes playing.
+         */
+        _this.finishedPlaying = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Fired when video starts to buffer.
+         */
+        _this.startedBuffering = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Fired when video recovers from buffering.
+         */
+        _this.finishedBuffering = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Fired when an error occurs on the video.
+         */
+        _this.error = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        _this._listeners = [];
+        _this.nativeElement.id = _this._id = 'video-' + String(Math.floor((Math.random() * 10000) + 1));
+        return _this;
+    }
+    /**
+     * @hidden
+     */
+    FBVideoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        FB.Event.subscribe('xfbml.ready', function (msg) {
+            if (msg.type === 'video' && msg.id === _this._id) {
+                _this._instance = msg.instance;
+                _this._listeners.push(_this._instance.subscribe('startedPlaying', function (e) { return _this.startedPlaying.emit(e); }), _this._instance.subscribe('paused', function (e) { return _this.paused.emit(e); }), _this._instance.subscribe('finishedPlaying', function (e) { return _this.finishedPlaying.emit(e); }), _this._instance.subscribe('startedBuffering', function (e) { return _this.startedBuffering.emit(e); }), _this._instance.subscribe('finishedBuffering', function (e) { return _this.finishedBuffering.emit(e); }), _this._instance.subscribe('error', function (e) { return _this.error.emit(e); }));
+            }
+        });
+    };
+    /**
+     * @hidden
+     */
+    FBVideoComponent.prototype.ngOnDestroy = function () {
+        this._listeners.forEach(function (l) {
+            if (typeof l.release === 'function') {
+                l.release();
+            }
+        });
+    };
+    /**
+     * Plays the video.
+     */
+    FBVideoComponent.prototype.play = function () { };
+    /**
+     * Pauses the video.
+     */
+    FBVideoComponent.prototype.pause = function () { };
+    /**
+     * Seeks to specified position.
+     * @param seconds {number}
+     */
+    FBVideoComponent.prototype.seek = function (seconds) { };
+    /**
+     * Mute the video.
+     */
+    FBVideoComponent.prototype.mute = function () { };
+    /**
+     * Unmute the video.
+     */
+    FBVideoComponent.prototype.unmute = function () { };
+    /**
+     * Returns true if video is muted, false if not.
+     */
+    FBVideoComponent.prototype.isMuted = function () { return; };
+    /**
+     * Set the volume
+     * @param volume
+     */
+    FBVideoComponent.prototype.setVolume = function (volume) { };
+    /**
+     * Get the volume
+     */
+    FBVideoComponent.prototype.getVolume = function () { return; };
+    /**
+     * Returns the current video time position in seconds
+     */
+    FBVideoComponent.prototype.getCurrentPosition = function () { };
+    /**
+     * Returns the video duration in seconds
+     */
+    FBVideoComponent.prototype.getDuration = function () { };
+    return FBVideoComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__fbml_component__["a" /* FBMLComponent */]));
+
+FBVideoComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'fb-video',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+FBVideoComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+]; };
+FBVideoComponent.propDecorators = {
+    'href': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'allowfullscreen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'autoplay': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'width': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showText': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showCaptions': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'startedPlaying': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'paused': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'finishedPlaying': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'startedBuffering': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'finishedBuffering': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'error': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBVideoComponent.prototype, "href", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBVideoComponent.prototype, "allowfullscreen", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBVideoComponent.prototype, "autoplay", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", String)
+], FBVideoComponent.prototype, "width", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBVideoComponent.prototype, "showText", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["b" /* FBMLAttribute */],
+    __metadata("design:type", Boolean)
+], FBVideoComponent.prototype, "showCaptions", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "play", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "pause", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "seek", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "mute", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "unmute", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], FBVideoComponent.prototype, "isMuted", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "setVolume", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], FBVideoComponent.prototype, "getVolume", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "getCurrentPosition", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__fbml_component__["c" /* FBMLInstanceMethod */],
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FBVideoComponent.prototype, "getDuration", null);
+//# sourceMappingURL=fb-video.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/components/fbml-component.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = FBMLAttribute;
+/* harmony export (immutable) */ __webpack_exports__["c"] = FBMLInstanceMethod;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FBMLComponent; });
+/**
+ * @hidden
+ */
+function FBMLAttribute(target, key) {
+    var processKey = function (_k) { return 'data-' + _k.toString().replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase(); };
+    Object.defineProperty(target, key, {
+        set: function (value) {
+            value = value.toString();
+            this.setAttribute(processKey(key), value);
+        },
+        get: function () {
+            return this.getAttribute(processKey(key));
+        },
+        enumerable: true
+    });
+}
+/**
+ * @hidden
+ */
+function FBMLInstanceMethod(target, key) {
+    return {
+        enumerable: true,
+        value: function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            if (this._instance) {
+                return this._instance[key].apply(this._instance, args);
+            }
+            else {
+                console.warn('ng2-facebook-sdk: tried calling instance method before component is ready.');
+                return null;
+            }
+        }
+    };
+}
+/**
+ * @hidden
+ */
+var FBMLComponent = (function () {
+    function FBMLComponent(el, rnd, fbClass) {
+        this.el = el;
+        this.rnd = rnd;
+        this.fbClass = fbClass;
+        this.nativeElement = this.el.nativeElement;
+        this.rnd.setElementClass(this.nativeElement, this.fbClass, true);
+    }
+    FBMLComponent.prototype.setAttribute = function (name, value) {
+        if (!name || !value)
+            return;
+        this.rnd.setElementAttribute(this.nativeElement, name, value);
+    };
+    FBMLComponent.prototype.getAttribute = function (name) {
+        if (!name)
+            return;
+        return this.nativeElement.getAttribute(name);
+    };
+    return FBMLComponent;
+}());
+
+//# sourceMappingURL=fbml-component.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/facebook.module.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/providers/facebook.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-comment-embed/fb-comment-embed.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_comments_fb_comments__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-comments/fb-comments.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_follow_fb_follow__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-follow/fb-follow.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_like_fb_like__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-like/fb-like.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_page_fb_page__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-page/fb-page.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_post_fb_post__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-post/fb-post.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_quote_fb_quote__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-quote/fb-quote.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_save_fb_save__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-save/fb-save.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_send_fb_send__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-send/fb-send.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_fb_share_fb_share__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-share/fb-share.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_fb_video_fb_video__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-video/fb-video.js");
+/* unused harmony export getComponents */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookModule; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+var components = [
+    __WEBPACK_IMPORTED_MODULE_2__components_fb_comment_embed_fb_comment_embed__["a" /* FBCommentEmbedComponent */],
+    __WEBPACK_IMPORTED_MODULE_3__components_fb_comments_fb_comments__["a" /* FBCommentsComponent */],
+    __WEBPACK_IMPORTED_MODULE_4__components_fb_follow_fb_follow__["a" /* FBFollowComponent */],
+    __WEBPACK_IMPORTED_MODULE_5__components_fb_like_fb_like__["a" /* FBLikeComponent */],
+    __WEBPACK_IMPORTED_MODULE_6__components_fb_page_fb_page__["a" /* FBPageComponent */],
+    __WEBPACK_IMPORTED_MODULE_7__components_fb_post_fb_post__["a" /* FBPostComponent */],
+    __WEBPACK_IMPORTED_MODULE_8__components_fb_quote_fb_quote__["a" /* FBQuoteComponent */],
+    __WEBPACK_IMPORTED_MODULE_9__components_fb_save_fb_save__["a" /* FBSaveComponent */],
+    __WEBPACK_IMPORTED_MODULE_10__components_fb_send_fb_send__["a" /* FBSendComponent */],
+    __WEBPACK_IMPORTED_MODULE_11__components_fb_share_fb_share__["a" /* FBShareComponent */],
+    __WEBPACK_IMPORTED_MODULE_12__components_fb_video_fb_video__["a" /* FBVideoComponent */]
+];
+function getComponents() {
+    return components;
+}
+/**
+ * @shortdesc The module to import to add this library
+ * @description
+ * The main module to import into your application.
+ * You only need to import this module if you wish to use the components in this library; otherwise, you could just import [FacebookService](../facebook-service) into your module instead.
+ * This module will make all components and providers available in your application.
+ *
+ * @usage
+ * In order to use this library, you need to import `FacebookModule` into your app's main `NgModule`.
+ *
+ * ```typescript
+ * import { FacebookModule } from 'ng2-facebook-sdk';
+ *
+ * @NgModule({
+ *   ...
+ *   imports: [
+ *     ...
+ *     FacebookModule.forRoot()
+ *   ],
+ *   ...
+ * })
+ * export class AppModule { }
+ * ```
+ */
+var FacebookModule = (function () {
+    function FacebookModule() {
+    }
+    FacebookModule.forRoot = function () {
+        return {
+            ngModule: FacebookModule,
+            providers: [__WEBPACK_IMPORTED_MODULE_1__providers_facebook__["a" /* FacebookService */]]
+        };
+    };
+    return FacebookModule;
+}());
+
+FacebookModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                declarations: getComponents(),
+                exports: getComponents()
+            },] },
+];
+/** @nocollapse */
+FacebookModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=facebook.module.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_fb_comment_embed_fb_comment_embed__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-comment-embed/fb-comment-embed.js");
+/* unused harmony reexport FBCommentEmbedComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_fb_comments_fb_comments__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-comments/fb-comments.js");
+/* unused harmony reexport FBCommentsComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fb_follow_fb_follow__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-follow/fb-follow.js");
+/* unused harmony reexport FBFollowComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fb_like_fb_like__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-like/fb-like.js");
+/* unused harmony reexport FBLikeComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_fb_page_fb_page__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-page/fb-page.js");
+/* unused harmony reexport FBPageComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fb_post_fb_post__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-post/fb-post.js");
+/* unused harmony reexport FBPostComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_fb_quote_fb_quote__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-quote/fb-quote.js");
+/* unused harmony reexport FBQuoteComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_fb_save_fb_save__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-save/fb-save.js");
+/* unused harmony reexport FBSaveComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fb_send_fb_send__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-send/fb-send.js");
+/* unused harmony reexport FBSendComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fb_share_fb_share__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-share/fb-share.js");
+/* unused harmony reexport FBShareComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fb_video_fb_video__ = __webpack_require__("../../../../ngx-facebook/dist/esm/components/fb-video/fb-video.js");
+/* unused harmony reexport FBVideoComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/providers/facebook.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_11__providers_facebook__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__facebook_module__ = __webpack_require__("../../../../ngx-facebook/dist/esm/facebook.module.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_12__facebook_module__["a"]; });
+// components
+
+
+
+
+
+
+
+
+
+
+
+// providers
+
+// modules
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../../../../ngx-facebook/dist/esm/providers/facebook.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookService; });
+
+/**
+ * @shortdesc
+ * Angular 2 service to inject to use Facebook's SDK
+ * @description
+ * You only need to inject this service in your application if you aren't using [`FacebookModule`](../facebook-module).
+ * @usage
+ * ```typescript
+ * import { FacebookService, InitParams } from 'ng2-facebook-sdk';
+ *
+ * constructor(private fb: FacebookService) {
+ *
+ *   const params: InitParams = {
+ *
+ *   };
+ *
+ *   fb.init(params);
+ *
+ * }
+ * ```
+ */
+var FacebookService = (function () {
+    function FacebookService() {
+    }
+    /**
+     * This method is used to initialize and setup the SDK.
+     * @param params {InitParams} Initialization parameters
+     * @returns {Promise<any>}
+     */
+    FacebookService.prototype.init = function (params) {
+        try {
+            return Promise.resolve(FB.init(params));
+        }
+        catch (e) {
+            return Promise.reject(e);
+        }
+    };
+    /**
+     * This method lets you make calls to the Graph API
+     * @usage
+     * ```typescript
+     * this.fb.api('somepath')
+     *   .then(res => console.log(res))
+     *   .catch(e => console.log(e));
+     * ```
+     * @param path {string} The Graph API endpoint path that you want to call.
+     * @param [method=get] {string} The HTTP method that you want to use for the API request.
+     * @param [params] {Object} An object consisting of any parameters that you want to pass into your Graph API call.
+     * @returns {Promise<any>}
+     */
+    FacebookService.prototype.api = function (path, method, params) {
+        if (method === void 0) { method = 'get'; }
+        if (params === void 0) { params = {}; }
+        return new Promise(function (resolve, reject) {
+            try {
+                FB.api(path, method, params, function (response) {
+                    if (!response) {
+                        reject();
+                    }
+                    else if (response.error) {
+                        reject(response.error);
+                    }
+                    else {
+                        resolve(response);
+                    }
+                });
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * This method is used to trigger different forms of Facebook created UI dialogs.
+     * These dialogs include:
+     * - Share dialog
+     * - Login dialog
+     * - Add page tab dialog
+     * - Requests dialog
+     * - Send dialog
+     * - Payments dialog
+     * - Go Live dialog
+     * @param params {UIParams} A collection of parameters that control which dialog is loaded, and relevant settings.
+     * @returns {Promise<UIResponse>}
+     */
+    FacebookService.prototype.ui = function (params) {
+        return new Promise(function (resolve, reject) {
+            try {
+                FB.ui(params, function (response) {
+                    if (!response)
+                        reject();
+                    else if (response.error)
+                        reject(response.error);
+                    else
+                        resolve(response);
+                });
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * This method allows you to determine if a user is logged in to Facebook and has authenticated your app.
+     * @returns {Promise<LoginStatus>}
+     */
+    FacebookService.prototype.getLoginStatus = function () {
+        return new Promise(function (resolve, reject) {
+            try {
+                FB.getLoginStatus(function (response) {
+                    if (!response) {
+                        reject();
+                    }
+                    else {
+                        resolve(response);
+                    }
+                });
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * Login the user
+     * @usage
+     * ```typescript
+     * // login without options
+     * this.fb.login()
+     *   .then((response: LoginResponse) => console.log('Logged in', response))
+     *   .catch(e => console.error('Error logging in'));
+     *
+     * // login with options
+     * const options: LoginOptions = {
+     *   scope: 'public_profile,user_friends,email,pages_show_list',
+     *   return_scopes: true,
+     *   enable_profile_selector: true
+     * };
+     * this.fb.login(options)
+     *   .then(...)
+     *   .catch(...);
+     * ```
+     * @param [options] {LoginOptions} Login options
+     * @returns {Promise<LoginResponse>} returns a promise that resolves with [LoginResponse](../login-response) object, or rejects with an error
+     */
+    FacebookService.prototype.login = function (options) {
+        return new Promise(function (resolve, reject) {
+            try {
+                FB.login(function (response) {
+                    if (response.authResponse) {
+                        resolve(response);
+                    }
+                    else {
+                        reject();
+                    }
+                }, options);
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * Logout the user
+     * @usage
+     * ```typescript
+     * this.fb.logout().then(() => console.log('Logged out!'));
+     * ```
+     * @returns {Promise<any>} returns a promise that resolves when the user is logged out
+     */
+    FacebookService.prototype.logout = function () {
+        return new Promise(function (resolve, reject) {
+            try {
+                FB.logout(function (response) {
+                    resolve(response);
+                });
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
+    };
+    /**
+     * This synchronous function returns back the current authResponse.
+     * @usage
+     * ```typescript
+     * import { AuthResponse, FacebookService } from 'ng2-facebook-sdk';
+     *
+     * ...
+     *
+     * const authResponse: AuthResponse = this.fb.getAuthResponse();
+     * ```
+     * @returns {AuthResponse} returns an [AuthResponse](../auth-response) object
+     */
+    FacebookService.prototype.getAuthResponse = function () {
+        try {
+            return FB.getAuthResponse();
+        }
+        catch (e) {
+            console.error('ng2-facebook-sdk: ', e);
+        }
+    };
+    return FacebookService;
+}());
+
+FacebookService.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+FacebookService.ctorParameters = function () { return []; };
+//# sourceMappingURL=facebook.js.map
+
+/***/ }),
+
 /***/ "../../../../rxjs/BehaviorSubject.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28311,7 +30119,7 @@ module.exports = g;
 /* unused harmony export ɵb */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -32254,7 +34062,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -32523,7 +34331,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2'
 /* unused harmony export removeSummaryDuplicates */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -32543,7 +34351,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2'
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -39520,7 +41328,7 @@ function isExpansionFormStart(input, offset, interpolationConfig) {
  * @return {?}
  */
 function isExpansionCaseStart(peek) {
-    return peek === $EQ || isAsciiLetter(peek) || isDigit(peek);
+    return peek === $EQ || isAsciiLetter(peek);
 }
 /**
  * @param {?} code1
@@ -41961,7 +43769,7 @@ var Xliff = (function (_super) {
                 contextTags.push(new CR(8), contextGroupTag);
             });
             var /** @type {?} */ transUnit = new Tag(_UNIT_TAG, { id: message.id, datatype: 'html' });
-            (_a = transUnit.children).push.apply(_a, [new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes))].concat(contextTags));
+            (_a = transUnit.children).push.apply(_a, [new CR(8), new Tag(_SOURCE_TAG, {}, visitor.serialize(message.nodes)), new CR(8), new Tag(_TARGET_TAG)].concat(contextTags));
             if (message.description) {
                 transUnit.children.push(new CR(8), new Tag('note', { priority: '1', from: 'description' }, [new Text$2(message.description)]));
             }
@@ -42464,9 +44272,8 @@ var _WriteVisitor$1 = (function () {
      * @return {?}
      */
     _WriteVisitor$1.prototype.visitPlaceholder = function (ph, context) {
-        var /** @type {?} */ idStr = (this._nextPlaceholderId++).toString();
         return [new Tag(_PLACEHOLDER_TAG$1, {
-                id: idStr,
+                id: (this._nextPlaceholderId++).toString(),
                 equiv: ph.name,
                 disp: "{{" + ph.value + "}}",
             })];
@@ -42477,9 +44284,7 @@ var _WriteVisitor$1 = (function () {
      * @return {?}
      */
     _WriteVisitor$1.prototype.visitIcuPlaceholder = function (ph, context) {
-        var /** @type {?} */ cases = Object.keys(ph.value.cases).map(function (value) { return value + ' {...}'; }).join(' ');
-        var /** @type {?} */ idStr = (this._nextPlaceholderId++).toString();
-        return [new Tag(_PLACEHOLDER_TAG$1, { id: idStr, equiv: ph.name, disp: "{" + ph.value.expression + ", " + ph.value.type + ", " + cases + "}" })];
+        return [new Tag(_PLACEHOLDER_TAG$1, { id: (this._nextPlaceholderId++).toString() })];
     };
     /**
      * @param {?} nodes
@@ -59115,7 +60920,7 @@ var JitEmitterVisitor = (function (_super) {
             id = this._evalArgValues.length;
             this._evalArgValues.push(value);
             var /** @type {?} */ name = identifierName({ reference: ast.value.runtime }) || 'val';
-            this._evalArgNames.push("jit_" + name + "_" + id);
+            this._evalArgNames.push("jit_" + name + id);
         }
         ctx.print(ast, this._evalArgNames[id]);
         return null;
@@ -60375,7 +62180,7 @@ function _mergeArrays(parts) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return DebugContext; });
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -61171,7 +62976,7 @@ var Version = (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('4.3.2');
+var VERSION = new Version('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -64284,7 +66089,7 @@ function forkInnerZoneWithAngularBehavior(zone) {
         },
         onHandleError: function (delegate, current, target, error) {
             delegate.handleError(target, error);
-            zone.runOutsideAngular(function () { return zone.onError.emit(error); });
+            zone.onError.emit(error);
             return false;
         }
     });
@@ -64772,16 +66577,15 @@ var PlatformRef = (function () {
 }());
 /**
  * @param {?} errorHandler
- * @param {?} ngZone
  * @param {?} callback
  * @return {?}
  */
-function _callAndReportToErrorHandler(errorHandler, ngZone, callback) {
+function _callAndReportToErrorHandler(errorHandler, callback) {
     try {
         var /** @type {?} */ result = callback();
         if (isPromise(result)) {
             return result.catch(function (e) {
-                ngZone.runOutsideAngular(function () { return errorHandler.handleError(e); });
+                errorHandler.handleError(e);
                 // rethrow as the exception handler might not do it
                 throw e;
             });
@@ -64789,7 +66593,7 @@ function _callAndReportToErrorHandler(errorHandler, ngZone, callback) {
         return result;
     }
     catch (e) {
-        ngZone.runOutsideAngular(function () { return errorHandler.handleError(e); });
+        errorHandler.handleError(e);
         // rethrow as the exception handler might not do it
         throw e;
     }
@@ -64875,8 +66679,8 @@ var PlatformRef_ = (function (_super) {
                 throw new Error('No ErrorHandler. Is platform module (BrowserModule) included?');
             }
             moduleRef.onDestroy(function () { return remove(_this._modules, moduleRef); }); /** @type {?} */
-            ((ngZone)).runOutsideAngular(function () { return ((ngZone)).onError.subscribe({ next: function (error) { exceptionHandler.handleError(error); } }); });
-            return _callAndReportToErrorHandler(exceptionHandler, /** @type {?} */ ((ngZone)), function () {
+            ((ngZone)).onError.subscribe({ next: function (error) { exceptionHandler.handleError(error); } });
+            return _callAndReportToErrorHandler(exceptionHandler, function () {
                 var /** @type {?} */ initStatus = moduleRef.injector.get(ApplicationInitStatus);
                 initStatus.runInitializers();
                 return initStatus.donePromise.then(function () {
@@ -65172,7 +66976,6 @@ var ApplicationRef_ = (function (_super) {
      * @return {?}
      */
     ApplicationRef_.prototype.tick = function () {
-        var _this = this;
         if (this._runningTick) {
             throw new Error('ApplicationRef.tick is called recursively');
         }
@@ -65186,7 +66989,7 @@ var ApplicationRef_ = (function (_super) {
         }
         catch (e) {
             // Attention: Don't rethrow as it could cancel subscriptions to Observables!
-            this._zone.runOutsideAngular(function () { return _this._exceptionHandler.handleError(e); });
+            this._exceptionHandler.handleError(e);
         }
         finally {
             this._runningTick = false;
@@ -75257,7 +77060,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -81106,7 +82909,7 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -81319,7 +83122,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /* unused harmony export ɵd */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -83474,7 +85277,7 @@ JsonpModule.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -83520,7 +85323,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.3.2'
 /* unused harmony export ɵResourceLoaderImpl */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -83653,7 +85456,7 @@ var CachedResourceLoader = (function (_super) {
 /**
  * @stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -83741,7 +85544,7 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__
 /* unused harmony export ɵe */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -88148,7 +89951,7 @@ var By = (function () {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -88199,24 +90002,24 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.2'
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__ = __webpack_require__("../../../../rxjs/operator/first.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__ = __webpack_require__("../../../../rxjs/operator/last.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__ = __webpack_require__("../../../../rxjs/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__ = __webpack_require__("../../../../rxjs/operator/mergeMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__ = __webpack_require__("../../../../rxjs/operator/reduce.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__ = __webpack_require__("../../../../rxjs/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__ = __webpack_require__("../../../../rxjs/operator/concatAll.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__ = __webpack_require__("../../../../rxjs/util/EmptyError.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__ = __webpack_require__("../../../../rxjs/observable/fromPromise.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__ = __webpack_require__("../../../../rxjs/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__ = __webpack_require__("../../../../rxjs/operator/mergeMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_reduce__ = __webpack_require__("../../../../rxjs/operator/reduce.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_operator_reduce__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__ = __webpack_require__("../../../../rxjs/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_concatAll__ = __webpack_require__("../../../../rxjs/operator/concatAll.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_operator_concatAll__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_util_EmptyError__ = __webpack_require__("../../../../rxjs/util/EmptyError.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_util_EmptyError__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise__ = __webpack_require__("../../../../rxjs/observable/fromPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_last__ = __webpack_require__("../../../../rxjs/operator/last.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_operator_last__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__ = __webpack_require__("../../../../rxjs/operator/mergeAll.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
@@ -88279,7 +90082,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.2'
 /* unused harmony export ɵl */
 
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.3.0
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -88887,7 +90690,7 @@ function waitForMap(obj, fn) {
     var /** @type {?} */ waitTail = [];
     var /** @type {?} */ res = {};
     forEach(obj, function (a, k) {
-        var /** @type {?} */ mapped = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(fn(k, a), function (r) { return res[k] = r; });
+        var /** @type {?} */ mapped = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(fn(k, a), function (r) { return res[k] = r; });
         if (k === PRIMARY_OUTLET) {
             waitHead.push(mapped);
         }
@@ -88895,9 +90698,9 @@ function waitForMap(obj, fn) {
             waitTail.push(mapped);
         }
     });
-    var /** @type {?} */ concat$ = __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__["concatAll"].call(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"].apply(void 0, waitHead.concat(waitTail)));
-    var /** @type {?} */ last$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__["last"].call(concat$);
-    return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(last$, function () { return res; });
+    var /** @type {?} */ concat$ = __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_concatAll__["concatAll"].call(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"].apply(void 0, waitHead.concat(waitTail)));
+    var /** @type {?} */ last$ = __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_last__["last"].call(concat$);
+    return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(last$, function () { return res; });
 }
 /**
  * @param {?} observables
@@ -88920,7 +90723,7 @@ function wrapIntoObservable(value) {
         // Use `Promise.resolve()` to wrap promise-like instances.
         // Required ie when a Resolver returns a AngularJS `$q` promise to correctly trigger the
         // change detection.
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__["fromPromise"])(Promise.resolve(value));
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise__["fromPromise"])(Promise.resolve(value));
     }
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(value);
 }
@@ -89649,28 +91452,28 @@ var AbsoluteRedirect = (function () {
  * @return {?}
  */
 function noMatch(segmentGroup) {
-    return new __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__["Observable"](function (obs) { return obs.error(new NoMatch(segmentGroup)); });
+    return new __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__["Observable"](function (obs) { return obs.error(new NoMatch(segmentGroup)); });
 }
 /**
  * @param {?} newTree
  * @return {?}
  */
 function absoluteRedirect(newTree) {
-    return new __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__["Observable"](function (obs) { return obs.error(new AbsoluteRedirect(newTree)); });
+    return new __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__["Observable"](function (obs) { return obs.error(new AbsoluteRedirect(newTree)); });
 }
 /**
  * @param {?} redirectTo
  * @return {?}
  */
 function namedOutletsRedirect(redirectTo) {
-    return new __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__["Observable"](function (obs) { return obs.error(new Error("Only absolute redirects can have named outlets. redirectTo: '" + redirectTo + "'")); });
+    return new __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__["Observable"](function (obs) { return obs.error(new Error("Only absolute redirects can have named outlets. redirectTo: '" + redirectTo + "'")); });
 }
 /**
  * @param {?} route
  * @return {?}
  */
 function canLoadFails(route) {
-    return new __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__["Observable"](function (obs) { return obs.error(navigationCancelingError("Cannot load children because the guard of the route \"path: '" + route.path + "'\" returned false")); });
+    return new __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__["Observable"](function (obs) { return obs.error(navigationCancelingError("Cannot load children because the guard of the route \"path: '" + route.path + "'\" returned false")); });
 }
 /**
  * Returns the `UrlTree` with the redirection applied.
@@ -89708,8 +91511,8 @@ var ApplyRedirects = (function () {
     ApplyRedirects.prototype.apply = function () {
         var _this = this;
         var /** @type {?} */ expanded$ = this.expandSegmentGroup(this.ngModule, this.config, this.urlTree.root, PRIMARY_OUTLET);
-        var /** @type {?} */ urlTrees$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, _this.urlTree.queryParams, /** @type {?} */ ((_this.urlTree.fragment))); });
-        return __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__["_catch"].call(urlTrees$, function (e) {
+        var /** @type {?} */ urlTrees$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, _this.urlTree.queryParams, /** @type {?} */ ((_this.urlTree.fragment))); });
+        return __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__["_catch"].call(urlTrees$, function (e) {
             if (e instanceof AbsoluteRedirect) {
                 // after an absolute redirect we do not apply any more redirects!
                 _this.allowRedirects = false;
@@ -89729,8 +91532,8 @@ var ApplyRedirects = (function () {
     ApplyRedirects.prototype.match = function (tree) {
         var _this = this;
         var /** @type {?} */ expanded$ = this.expandSegmentGroup(this.ngModule, this.config, tree.root, PRIMARY_OUTLET);
-        var /** @type {?} */ mapped$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, tree.queryParams, /** @type {?} */ ((tree.fragment))); });
-        return __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__["_catch"].call(mapped$, function (e) {
+        var /** @type {?} */ mapped$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(expanded$, function (rootSegmentGroup) { return _this.createUrlTree(rootSegmentGroup, tree.queryParams, /** @type {?} */ ((tree.fragment))); });
+        return __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__["_catch"].call(mapped$, function (e) {
             if (e instanceof NoMatch) {
                 throw _this.noMatchError(e);
             }
@@ -89766,7 +91569,7 @@ var ApplyRedirects = (function () {
      */
     ApplyRedirects.prototype.expandSegmentGroup = function (ngModule, routes, segmentGroup, outlet) {
         if (segmentGroup.segments.length === 0 && segmentGroup.hasChildren()) {
-            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.expandChildren(ngModule, routes, segmentGroup), function (children) { return new UrlSegmentGroup([], children); });
+            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(this.expandChildren(ngModule, routes, segmentGroup), function (children) { return new UrlSegmentGroup([], children); });
         }
         return this.expandSegment(ngModule, segmentGroup, routes, segmentGroup.segments, outlet, true);
     };
@@ -89792,19 +91595,19 @@ var ApplyRedirects = (function () {
     ApplyRedirects.prototype.expandSegment = function (ngModule, segmentGroup, routes, segments, outlet, allowRedirects) {
         var _this = this;
         var /** @type {?} */ routes$ = __WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"].apply(void 0, routes);
-        var /** @type {?} */ processedRoutes$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(routes$, function (r) {
+        var /** @type {?} */ processedRoutes$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(routes$, function (r) {
             var /** @type {?} */ expanded$ = _this.expandSegmentAgainstRoute(ngModule, segmentGroup, routes, r, segments, outlet, allowRedirects);
-            return __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__["_catch"].call(expanded$, function (e) {
+            return __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__["_catch"].call(expanded$, function (e) {
                 if (e instanceof NoMatch) {
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(null);
                 }
                 throw e;
             });
         });
-        var /** @type {?} */ concattedProcessedRoutes$ = __WEBPACK_IMPORTED_MODULE_16_rxjs_operator_concatAll__["concatAll"].call(processedRoutes$);
+        var /** @type {?} */ concattedProcessedRoutes$ = __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_concatAll__["concatAll"].call(processedRoutes$);
         var /** @type {?} */ first$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_first__["first"].call(concattedProcessedRoutes$, function (s) { return !!s; });
-        return __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__["_catch"].call(first$, function (e, _) {
-            if (e instanceof __WEBPACK_IMPORTED_MODULE_17_rxjs_util_EmptyError__["EmptyError"]) {
+        return __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__["_catch"].call(first$, function (e, _) {
+            if (e instanceof __WEBPACK_IMPORTED_MODULE_16_rxjs_util_EmptyError__["EmptyError"]) {
                 if (_this.noLeftoversInUrl(segmentGroup, segments, outlet)) {
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(new UrlSegmentGroup([], {}));
                 }
@@ -89872,7 +91675,7 @@ var ApplyRedirects = (function () {
         if (((route.redirectTo)).startsWith('/')) {
             return absoluteRedirect(newTree);
         }
-        return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
+        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
             var /** @type {?} */ group = new UrlSegmentGroup(newSegments, {});
             return _this.expandSegment(ngModule, group, routes, newSegments, outlet, false);
         });
@@ -89895,7 +91698,7 @@ var ApplyRedirects = (function () {
         if (((route.redirectTo)).startsWith('/')) {
             return absoluteRedirect(newTree);
         }
-        return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
+        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(this.lineralizeSegments(route, newTree), function (newSegments) {
             return _this.expandSegment(ngModule, segmentGroup, routes, newSegments.concat(segments.slice(lastChild)), outlet, false);
         });
     };
@@ -89910,7 +91713,7 @@ var ApplyRedirects = (function () {
         var _this = this;
         if (route.path === '**') {
             if (route.loadChildren) {
-                return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.configLoader.load(ngModule.injector, route), function (cfg) {
+                return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(this.configLoader.load(ngModule.injector, route), function (cfg) {
                     route._loadedConfig = cfg;
                     return new UrlSegmentGroup(segments, {});
                 });
@@ -89922,19 +91725,19 @@ var ApplyRedirects = (function () {
             return noMatch(rawSegmentGroup);
         var /** @type {?} */ rawSlicedSegments = segments.slice(lastChild);
         var /** @type {?} */ childConfig$ = this.getChildConfig(ngModule, route);
-        return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(childConfig$, function (routerConfig) {
+        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(childConfig$, function (routerConfig) {
             var /** @type {?} */ childModule = routerConfig.module;
             var /** @type {?} */ childConfig = routerConfig.routes;
             var _a = split(rawSegmentGroup, consumedSegments, rawSlicedSegments, childConfig), segmentGroup = _a.segmentGroup, slicedSegments = _a.slicedSegments;
             if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
                 var /** @type {?} */ expanded$_1 = _this.expandChildren(childModule, childConfig, segmentGroup);
-                return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(expanded$_1, function (children) { return new UrlSegmentGroup(consumedSegments, children); });
+                return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(expanded$_1, function (children) { return new UrlSegmentGroup(consumedSegments, children); });
             }
             if (childConfig.length === 0 && slicedSegments.length === 0) {
                 return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(new UrlSegmentGroup(consumedSegments, {}));
             }
             var /** @type {?} */ expanded$ = _this.expandSegment(childModule, segmentGroup, childConfig, slicedSegments, PRIMARY_OUTLET, true);
-            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(expanded$, function (cs) { return new UrlSegmentGroup(consumedSegments.concat(cs.segments), cs.children); });
+            return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(expanded$, function (cs) { return new UrlSegmentGroup(consumedSegments.concat(cs.segments), cs.children); });
         });
     };
     /**
@@ -89953,9 +91756,9 @@ var ApplyRedirects = (function () {
             if (route._loadedConfig !== undefined) {
                 return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(route._loadedConfig);
             }
-            return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(runCanLoadGuard(ngModule.injector, route), function (shouldLoad) {
+            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(runCanLoadGuard(ngModule.injector, route), function (shouldLoad) {
                 if (shouldLoad) {
-                    return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(_this.configLoader.load(ngModule.injector, route), function (cfg) {
+                    return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(_this.configLoader.load(ngModule.injector, route), function (cfg) {
                         route._loadedConfig = cfg;
                         return cfg;
                     });
@@ -90091,7 +91894,7 @@ function runCanLoadGuard(moduleInjector, route) {
     var /** @type {?} */ canLoad = route.canLoad;
     if (!canLoad || canLoad.length === 0)
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(true);
-    var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canLoad), function (injectionToken) {
+    var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canLoad), function (injectionToken) {
         var /** @type {?} */ guard = moduleInjector.get(injectionToken);
         return wrapIntoObservable(guard.canLoad ? guard.canLoad(route) : guard(route));
     });
@@ -90529,7 +92332,7 @@ var ActivatedRoute = (function () {
          */
         get: function () {
             if (!this._paramMap) {
-                this._paramMap = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.params, function (p) { return convertToParamMap(p); });
+                this._paramMap = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(this.params, function (p) { return convertToParamMap(p); });
             }
             return this._paramMap;
         },
@@ -90543,7 +92346,7 @@ var ActivatedRoute = (function () {
         get: function () {
             if (!this._queryParamMap) {
                 this._queryParamMap =
-                    __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.queryParams, function (p) { return convertToParamMap(p); });
+                    __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(this.queryParams, function (p) { return convertToParamMap(p); });
             }
             return this._queryParamMap;
         },
@@ -91344,7 +93147,7 @@ var Recognizer = (function () {
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(routeState);
         }
         catch (e) {
-            return new __WEBPACK_IMPORTED_MODULE_14_rxjs_Observable__["Observable"](function (obs) { return obs.error(e); });
+            return new __WEBPACK_IMPORTED_MODULE_13_rxjs_Observable__["Observable"](function (obs) { return obs.error(e); });
         }
     };
     /**
@@ -91494,8 +93297,7 @@ function match$1(segmentGroup, route, segments) {
         throw new NoMatch$1();
     var /** @type {?} */ posParams = {};
     forEach(/** @type {?} */ ((res.posParams)), function (v, k) { posParams[k] = v.path; });
-    var /** @type {?} */ parameters = res.consumed.length > 0 ? Object.assign({}, posParams, res.consumed[res.consumed.length - 1].parameters) :
-        posParams;
+    var /** @type {?} */ parameters = Object.assign({}, posParams, res.consumed[res.consumed.length - 1].parameters);
     return { consumedSegments: res.consumed, lastChild: res.consumed.length, parameters: parameters };
 }
 /**
@@ -91789,7 +93591,7 @@ var RouterConfigLoader = (function () {
             this.onLoadStartListener(route);
         }
         var /** @type {?} */ moduleFactory$ = this.loadModuleFactory(/** @type {?} */ ((route.loadChildren)));
-        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(moduleFactory$, function (factory) {
+        return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(moduleFactory$, function (factory) {
             if (_this.onLoadEndListener) {
                 _this.onLoadEndListener(route);
             }
@@ -91804,15 +93606,15 @@ var RouterConfigLoader = (function () {
     RouterConfigLoader.prototype.loadModuleFactory = function (loadChildren) {
         var _this = this;
         if (typeof loadChildren === 'string') {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__["fromPromise"])(this.loader.load(loadChildren));
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise__["fromPromise"])(this.loader.load(loadChildren));
         }
         else {
-            return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(wrapIntoObservable(loadChildren()), function (t) {
+            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(wrapIntoObservable(loadChildren()), function (t) {
                 if (t instanceof __WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModuleFactory"]) {
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(t);
                 }
                 else {
-                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_rxjs_observable_fromPromise__["fromPromise"])(_this.compiler.compileModuleAsync(t));
+                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_17_rxjs_observable_fromPromise__["fromPromise"])(_this.compiler.compileModuleAsync(t));
                 }
             });
         }
@@ -92065,7 +93867,6 @@ var Router = (function () {
     Router.prototype.resetConfig = function (config) {
         validateConfig(config);
         this.config = config;
-        this.navigated = false;
     };
     /**
      * \@docsNotRequired
@@ -92356,8 +94157,8 @@ var Router = (function () {
             if (!precreatedState) {
                 var /** @type {?} */ moduleInjector = _this.ngModule.injector;
                 var /** @type {?} */ redirectsApplied$ = applyRedirects(moduleInjector, _this.configLoader, _this.urlSerializer, url, _this.config);
-                urlAndSnapshot$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(redirectsApplied$, function (appliedUrl) {
-                    return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(recognize(_this.rootComponentType, _this.config, appliedUrl, _this.serializeUrl(appliedUrl)), function (snapshot) {
+                urlAndSnapshot$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(redirectsApplied$, function (appliedUrl) {
+                    return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(recognize(_this.rootComponentType, _this.config, appliedUrl, _this.serializeUrl(appliedUrl)), function (snapshot) {
                         _this.routerEvents.next(new RoutesRecognized(id, _this.serializeUrl(url), _this.serializeUrl(appliedUrl), snapshot));
                         return { appliedUrl: appliedUrl, snapshot: snapshot };
                     });
@@ -92366,12 +94167,12 @@ var Router = (function () {
             else {
                 urlAndSnapshot$ = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])({ appliedUrl: url, snapshot: precreatedState });
             }
-            var /** @type {?} */ beforePreactivationDone$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(urlAndSnapshot$, function (p) {
-                return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(_this.hooks.beforePreactivation(p.snapshot), function () { return p; });
+            var /** @type {?} */ beforePreactivationDone$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(urlAndSnapshot$, function (p) {
+                return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(_this.hooks.beforePreactivation(p.snapshot), function () { return p; });
             });
             // run preactivation: guards and data resolvers
             var /** @type {?} */ preActivation;
-            var /** @type {?} */ preactivationTraverse$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(beforePreactivationDone$, function (_a) {
+            var /** @type {?} */ preactivationTraverse$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(beforePreactivationDone$, function (_a) {
                 var appliedUrl = _a.appliedUrl, snapshot = _a.snapshot;
                 var /** @type {?} */ moduleInjector = _this.ngModule.injector;
                 preActivation =
@@ -92379,22 +94180,22 @@ var Router = (function () {
                 preActivation.traverse(_this.rootContexts);
                 return { appliedUrl: appliedUrl, snapshot: snapshot };
             });
-            var /** @type {?} */ preactivationCheckGuards$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(preactivationTraverse$, function (_a) {
+            var /** @type {?} */ preactivationCheckGuards$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(preactivationTraverse$, function (_a) {
                 var appliedUrl = _a.appliedUrl, snapshot = _a.snapshot;
                 if (_this.navigationId !== id)
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(false);
                 _this.triggerEvent(new GuardsCheckStart(id, _this.serializeUrl(url), appliedUrl, snapshot));
-                return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(preActivation.checkGuards(), function (shouldActivate) {
+                return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(preActivation.checkGuards(), function (shouldActivate) {
                     _this.triggerEvent(new GuardsCheckEnd(id, _this.serializeUrl(url), appliedUrl, snapshot, shouldActivate));
                     return { appliedUrl: appliedUrl, snapshot: snapshot, shouldActivate: shouldActivate };
                 });
             });
-            var /** @type {?} */ preactivationResolveData$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(preactivationCheckGuards$, function (p) {
+            var /** @type {?} */ preactivationResolveData$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(preactivationCheckGuards$, function (p) {
                 if (_this.navigationId !== id)
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(false);
                 if (p.shouldActivate && preActivation.isActivating()) {
                     _this.triggerEvent(new ResolveStart(id, _this.serializeUrl(url), p.appliedUrl, p.snapshot));
-                    return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(preActivation.resolveData(), function () {
+                    return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(preActivation.resolveData(), function () {
                         _this.triggerEvent(new ResolveEnd(id, _this.serializeUrl(url), p.appliedUrl, p.snapshot));
                         return p;
                     });
@@ -92403,12 +94204,12 @@ var Router = (function () {
                     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(p);
                 }
             });
-            var /** @type {?} */ preactivationDone$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(preactivationResolveData$, function (p) {
-                return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(_this.hooks.afterPreactivation(p.snapshot), function () { return p; });
+            var /** @type {?} */ preactivationDone$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(preactivationResolveData$, function (p) {
+                return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(_this.hooks.afterPreactivation(p.snapshot), function () { return p; });
             });
             // create router state
             // this operation has side effects => route state is being affected
-            var /** @type {?} */ routerState$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(preactivationDone$, function (_a) {
+            var /** @type {?} */ routerState$ = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(preactivationDone$, function (_a) {
                 var appliedUrl = _a.appliedUrl, snapshot = _a.snapshot, shouldActivate = _a.shouldActivate;
                 if (shouldActivate) {
                     var /** @type {?} */ state = createRouterState(_this.routeReuseStrategy, snapshot, _this.currentRouterState);
@@ -92548,7 +94349,7 @@ var PreActivation = (function () {
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(true);
         }
         var /** @type {?} */ canDeactivate$ = this.runCanDeactivateChecks();
-        return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(canDeactivate$, function (canDeactivate) { return canDeactivate ? _this.runCanActivateChecks() : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(false); });
+        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(canDeactivate$, function (canDeactivate) { return canDeactivate ? _this.runCanActivateChecks() : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(false); });
     };
     /**
      * @return {?}
@@ -92559,7 +94360,7 @@ var PreActivation = (function () {
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(null);
         var /** @type {?} */ checks$ = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(this.canActivateChecks);
         var /** @type {?} */ runningChecks$ = __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__["concatMap"].call(checks$, function (check) { return _this.runResolve(check.route); });
-        return __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_reduce__["reduce"].call(runningChecks$, function (_, __) { return _; });
+        return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_reduce__["reduce"].call(runningChecks$, function (_, __) { return _; });
     };
     /**
      * @return {?}
@@ -92600,9 +94401,10 @@ var PreActivation = (function () {
         var /** @type {?} */ context = parentContexts ? parentContexts.getContext(futureNode.value.outlet) : null;
         // reusing the node
         if (curr && future._routeConfig === curr._routeConfig) {
-            var /** @type {?} */ shouldRunGuardsAndResolvers = this.shouldRunGuardsAndResolvers(curr, future, /** @type {?} */ ((future._routeConfig)).runGuardsAndResolvers);
-            if (shouldRunGuardsAndResolvers) {
+            if (this.shouldRunGuardsAndResolvers(curr, future, /** @type {?} */ ((future._routeConfig)).runGuardsAndResolvers)) {
                 this.canActivateChecks.push(new CanActivate(futurePath));
+                var /** @type {?} */ outlet = ((((context)).outlet));
+                this.canDeactivateChecks.push(new CanDeactivate(outlet.component, curr));
             }
             else {
                 // we need to set the data
@@ -92616,10 +94418,6 @@ var PreActivation = (function () {
             }
             else {
                 this.traverseChildRoutes(futureNode, currNode, parentContexts, futurePath);
-            }
-            if (shouldRunGuardsAndResolvers) {
-                var /** @type {?} */ outlet = ((((context)).outlet));
-                this.canDeactivateChecks.push(new CanDeactivate(outlet.component, curr));
             }
         }
         else {
@@ -92691,7 +94489,7 @@ var PreActivation = (function () {
     PreActivation.prototype.runCanDeactivateChecks = function () {
         var _this = this;
         var /** @type {?} */ checks$ = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(this.canDeactivateChecks);
-        var /** @type {?} */ runningChecks$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(checks$, function (check) { return _this.runCanDeactivate(check.component, check.route); });
+        var /** @type {?} */ runningChecks$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(checks$, function (check) { return _this.runCanDeactivate(check.component, check.route); });
         return __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__["every"].call(runningChecks$, function (result) { return result === true; });
     };
     /**
@@ -92700,7 +94498,7 @@ var PreActivation = (function () {
     PreActivation.prototype.runCanActivateChecks = function () {
         var _this = this;
         var /** @type {?} */ checks$ = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(this.canActivateChecks);
-        var /** @type {?} */ runningChecks$ = __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_concatMap__["concatMap"].call(checks$, function (check) { return andObservables(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])([_this.runCanActivateChild(check.path), _this.runCanActivate(check.route)])); });
+        var /** @type {?} */ runningChecks$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(checks$, function (check) { return andObservables(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])([_this.runCanActivateChild(check.path), _this.runCanActivate(check.route)])); });
         return __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_every__["every"].call(runningChecks$, function (result) { return result === true; });
     };
     /**
@@ -92712,7 +94510,7 @@ var PreActivation = (function () {
         var /** @type {?} */ canActivate = future._routeConfig ? future._routeConfig.canActivate : null;
         if (!canActivate || canActivate.length === 0)
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(true);
-        var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canActivate), function (c) {
+        var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canActivate), function (c) {
             var /** @type {?} */ guard = _this.getToken(c, future);
             var /** @type {?} */ observable;
             if (guard.canActivate) {
@@ -92736,8 +94534,8 @@ var PreActivation = (function () {
             .reverse()
             .map(function (p) { return _this.extractCanActivateChild(p); })
             .filter(function (_) { return _ !== null; });
-        return andObservables(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canActivateChildGuards), function (d) {
-            var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(d.guards), function (c) {
+        return andObservables(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canActivateChildGuards), function (d) {
+            var /** @type {?} */ obs = __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(d.guards), function (c) {
                 var /** @type {?} */ guard = _this.getToken(c, d.node);
                 var /** @type {?} */ observable;
                 if (guard.canActivateChild) {
@@ -92771,7 +94569,7 @@ var PreActivation = (function () {
         var /** @type {?} */ canDeactivate = curr && curr._routeConfig ? curr._routeConfig.canDeactivate : null;
         if (!canDeactivate || canDeactivate.length === 0)
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(true);
-        var /** @type {?} */ canDeactivate$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canDeactivate), function (c) {
+        var /** @type {?} */ canDeactivate$ = __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(canDeactivate), function (c) {
             var /** @type {?} */ guard = _this.getToken(c, curr);
             var /** @type {?} */ observable;
             if (guard.canDeactivate) {
@@ -92791,7 +94589,7 @@ var PreActivation = (function () {
      */
     PreActivation.prototype.runResolve = function (future) {
         var /** @type {?} */ resolve = future._resolve;
-        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.resolveNode(resolve, future), function (resolvedData) {
+        return __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_map__["map"].call(this.resolveNode(resolve, future), function (resolvedData) {
             future._resolvedData = resolvedData;
             future.data = Object.assign({}, future.data, inheritedParamsDataResolve(future).resolve);
             return null;
@@ -92804,35 +94602,11 @@ var PreActivation = (function () {
      */
     PreActivation.prototype.resolveNode = function (resolve, future) {
         var _this = this;
-        var /** @type {?} */ keys = Object.keys(resolve);
-        if (keys.length === 0) {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])({});
-        }
-        if (keys.length === 1) {
-            var /** @type {?} */ key_1 = keys[0];
-            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(this.getResolver(resolve[key_1], future), function (value) {
-                return _a = {}, _a[key_1] = value, _a;
-                var _a;
-            });
-        }
-        var /** @type {?} */ data = {};
-        var /** @type {?} */ runningResolvers$ = __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_from__["from"])(keys), function (key) {
-            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(_this.getResolver(resolve[key], future), function (value) {
-                data[key] = value;
-                return value;
-            });
+        return waitForMap(resolve, function (k, v) {
+            var /** @type {?} */ resolver = _this.getToken(v, future);
+            return resolver.resolve ? wrapIntoObservable(resolver.resolve(future, _this.future)) :
+                wrapIntoObservable(resolver(future, _this.future));
         });
-        return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_map__["map"].call(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_last__["last"].call(runningResolvers$), function () { return data; });
-    };
-    /**
-     * @param {?} injectionToken
-     * @param {?} future
-     * @return {?}
-     */
-    PreActivation.prototype.getResolver = function (injectionToken, future) {
-        var /** @type {?} */ resolver = this.getToken(injectionToken, future);
-        return resolver.resolve ? wrapIntoObservable(resolver.resolve(future, this.future)) :
-            wrapIntoObservable(resolver(future, this.future));
     };
     /**
      * @param {?} token
@@ -93987,7 +95761,7 @@ var PreloadAllModules = (function () {
      * @return {?}
      */
     PreloadAllModules.prototype.preload = function (route, fn) {
-        return __WEBPACK_IMPORTED_MODULE_15_rxjs_operator_catch__["_catch"].call(fn(), function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(null); });
+        return __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_catch__["_catch"].call(fn(), function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_rxjs_observable_of__["of"])(null); });
     };
     return PreloadAllModules;
 }());
@@ -94093,7 +95867,7 @@ var RouterPreloader = (function () {
         var _this = this;
         return this.preloadingStrategy.preload(route, function () {
             var /** @type {?} */ loaded$ = _this.loader.load(ngModule.injector, route);
-            return __WEBPACK_IMPORTED_MODULE_12_rxjs_operator_mergeMap__["mergeMap"].call(loaded$, function (config) {
+            return __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_mergeMap__["mergeMap"].call(loaded$, function (config) {
                 route._loadedConfig = config;
                 return _this.processRoutes(config.module, config.routes);
             });
@@ -94529,7 +96303,7 @@ function provideRouterInitializer() {
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.2');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["Version"]('4.3.0');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
