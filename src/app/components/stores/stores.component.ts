@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-
 //services
 import { RestaurantService } from '../../services/restaurant.service';
 //components
 import { CategoriesComponent } from '../../components/modals/categories/categories.component';
 import { LoginComponent } from '../../components/modals/login/login.component';
-
 
 @Component({
   selector: 'app-stores',
@@ -19,7 +17,6 @@ export class StoresComponent implements OnInit {
   skipRecord: number  =0;
   infiniteScorllStatus=true;
   gaddress: any="";
-  SerchAddressLocalDateTime:any=""
 
   constructor(private restaurantService: RestaurantService, private modalService: NgbModal) { }
 
@@ -29,13 +26,12 @@ export class StoresComponent implements OnInit {
     //);
     var address = JSON.parse(localStorage.getItem("googleaddress"));
     // this.gaddress=address.street+', '+ address.city+' ,'+address.st+' ,'+address.co+' ,'+address.utc_offset
+<<<<<<< HEAD
     this.gaddress=address.street_number+', '+address.street+', '+ address.city+' ,'+address.st+' ,'+address.co;
+=======
+         this.gaddress=address.street+', '+ address.city+' ,'+address.st+' ,'+address.co;
+>>>>>>> adc39ea2a866888457e0bb371731fb2d1ec10ad3
     let result; 
-    
-   this.restaurantService.getSerchDatetime(address.lat,address.lng).subscribe(data =>{
-       this.SerchAddressLocalDateTime=data;
-     });
-
     this.restaurantService.getMyRestaurant(this.recordLimit,this.skipRecord).subscribe(data => {
     result = data;
        for (var v in result) {  
@@ -43,7 +39,6 @@ export class StoresComponent implements OnInit {
         }   
      });
   }
- 
  onScrollDown () {
     console.log('scrolled!!');
     const start = this.recordLimit;
@@ -65,7 +60,5 @@ export class StoresComponent implements OnInit {
   openLogin(){
     const modalRef = this.modalService.open(LoginComponent);
   }
-
- 
 
 }

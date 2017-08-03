@@ -828,7 +828,11 @@ header.green {background: #ed1b2e;}*/
 
 @media (max-width: 768px){
     .subscribe-form button{
+<<<<<<< HEAD
         margin-top: -40px !important;
+=======
+        margin-top: -35px !important;
+>>>>>>> adc39ea2a866888457e0bb371731fb2d1ec10ad3
     }
 	.right-nav{ margin-top:0px;}
 	.search-section form input{margin-top:0px;}

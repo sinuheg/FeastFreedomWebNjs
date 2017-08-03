@@ -14,8 +14,4 @@ export class RestaurantService {
   
     return this.http.get('/api/restaurants/' + recordLimit + "/" + skipRecord + "").map(res => res.json());
   }
- getSerchDatetime(lat:string,lng:string){
-  
-    return this.http.get('/api/timezone/' + lat + "/" + lng + "").map(res => res.text());
-  }
 }

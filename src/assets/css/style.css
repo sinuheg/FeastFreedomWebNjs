@@ -199,11 +199,11 @@ header.green .border-btn-small:hover {background: #fff;color: #ed1b2e;}
 
 /*======================= # Subscribe section  ==================*/
 .subscribe-form input, .subscribe-form select, .subscribe-form textarea {color: #b9b9b9;font-size: 15px;}
-.subscribe-form input{border: 1px solid #4ea950; height: 61px; /*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 20px 25px;width: 100%;float: left;border-right: 0;}
-.subscribe-form button{width: 29.3%;float: right; height: 60px; position: relative; margin-top: -60px;}
+.subscribe-form input{border: 1px solid #4ea950;/*border-top-left-radius: 4px;border-bottom-left-radius: 4px;*/padding: 20px 25px;width: 100%;float: left;border-right: 0;}
+.subscribe-form button{width: 29.3%;float: right; position: relative; margin-top: -59px;}
 .subscribe-form b{color:#000;}
-.subscribe-form {width:60%;letter-spacing: 0.1em;}
-.subscribe-form button {/*border-top-left-radius: 0;border-bottom-left-radius: 0;*/height: 60px; border-radius:0; padding:19.6px 20px;}
+.subscribe-form {width:50%;letter-spacing: 0.1em;}
+.subscribe-form button {/*border-top-left-radius: 0;border-bottom-left-radius: 0;*/ border-radius:0; padding:19.6px 20px;}
 .subscribe-block .top-text {margin-bottom: 30px;width: 44%;letter-spacing: 0.1em;font-family: 'Montserrat-Light', sans-serif;}
 
 /*======================= # Homepage type 1  ==================*/
@@ -822,13 +822,10 @@ header.green {background: #ed1b2e;}*/
   .seller-list ul li figure{ float: none; }
   section.banner.banner-image.health-banner { height:400px;}
 }
-@media (max-width: 1280px) and (min-width: 991px){
-    .subscribe-form input{ height: 60px; }
-}
 
 @media (max-width: 768px){
     .subscribe-form button{
-        margin-top: -40px !important;
+        margin-top: -33px !important;
     }
 	.right-nav{ margin-top:0px;}
 	.search-section form input{margin-top:0px;}
@@ -898,8 +895,8 @@ header.green {background: #ed1b2e;}*/
   .navbar-default .navbar-toggle {border-color: #ed1b2e;border-radius: 0;padding: 6px;background: transparent;margin: 0 15px 0;}
   .parallax-block-text h2 {font-size: 18px;margin-bottom: 10px;}
   .parallax-block { height: 250px;background-size: cover;}
-  .subscribe-form input {padding: 10px;font-size: 11px; height: 40px;}
-  .subscribe-form button {padding: 8px 5px 9px;font-size: 11px; height: 40px;}
+  .subscribe-form input {padding: 10px;font-size: 11px;}
+  .subscribe-form button {padding: 8px 5px 9px;font-size: 11px;}
   .top-text {margin: 0 auto 30px;line-height: 24px;}
   footer {position: relative;height: auto;}
   .banner-image img {position: relative;left: 0;right: 0;}
@@ -1549,7 +1546,7 @@ position: absolute;
 	}
 	.open .dropdown-menu{width:250px; margin-left:15px;}
 	.top-search{ margin-top:5px;}
-	.top-search input{ width:95%;}
+	.top-search input{ width:85%;}
 	.top-search i{  display:inline-block; line-height:38px;  font-size:20px; color:green; }
 	
 	#mySearch .search-section form input{

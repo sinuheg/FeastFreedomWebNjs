@@ -27,6 +27,12 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation'
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { FormsModule } from '@angular/forms';
+import { FacebookModule } from 'ngx-facebook';
+import {GoogleSignInComponent} from 'angular-google-signin';
+
+
+
 //new comment sss
 const ROUTES = [
   {
@@ -54,6 +60,8 @@ const ROUTES = [
     StoresComponent,
     HomeComponent,
     CategoriesComponent,
+    LoginComponent,
+    GoogleSignInComponent,
     LoginComponent, 
     KitchensetupComponent,
     KitchenverifyComponent
@@ -63,7 +71,13 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES),
     HttpModule,
     GooglePlaceModule,
+<<<<<<< HEAD
     InfiniteScrollModule,Ng2GoogleRecaptchaModule,
+=======
+    InfiniteScrollModule,
+     FormsModule,
+     FacebookModule.forRoot(),
+>>>>>>> adc39ea2a866888457e0bb371731fb2d1ec10ad3
     LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'
