@@ -20,6 +20,12 @@ import { CategoriesComponent } from './components/modals/categories/categories.c
 import { LoginComponent } from './components/modals/login/login.component'; 
 import { KitchensetupComponent } from './components/kitchen/kitchensetup/kitchensetup.component';
 import { KitchenverifyComponent } from './components/kitchen/kitchenverify/kitchenverify.component';
+import { Ng2GoogleRecaptchaModule }  from 'ng2-google-recaptcha';
+
+
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation'
+import { ReactiveFormsModule } from '@angular/forms';
 
 //new comment sss
 const ROUTES = [
@@ -53,11 +59,11 @@ const ROUTES = [
     KitchenverifyComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,FormsModule, CustomFormsModule,ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
     HttpModule,
     GooglePlaceModule,
-    InfiniteScrollModule,
+    InfiniteScrollModule,Ng2GoogleRecaptchaModule,
     LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'

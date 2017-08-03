@@ -31,8 +31,11 @@
           <input type="text" placeholder="Contact Name" class="form-control">
           <input type="text" placeholder="Email" class="form-control">
           <input type="text" placeholder="Phone #" class="form-control">
-
-          <input type="text" placeholder="Captcha" class="form-control">
+          <ng2-google-recaptcha class="form-control"
+                  [siteKey]="recaptchaSiteKey" 
+                  (onCaptchaComplete)="onCaptchaComplete($event)">
+               </ng2-google-recaptcha>
+          <!-- <input type="text" placeholder="Captcha" class="form-control"> -->
           <input type="submit" class="btn hvr-wobble-horizontal text-lt text-sp" value="Verify Email">
 
           <p>After you submit this form, a member of the Feast team will get in touch with you.</p>

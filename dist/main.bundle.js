@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- loader image before page load starts -->\r\n    <div class=\"se-pre-con\"></div>\r\n    <!-- loader image before page load ends -->\r\n    <!-- main wrapper of the site starts -->\r\n    <div class=\"wrapper\">\r\n        <router-outlet></router-outlet>\r\n        \r\n        <!-- ============== footer block starts ============== -->\r\n        <footer>\r\n            <div class=\"top-footer\">\r\n              <div class=\"container\">\r\n                <div class=\"row\">\r\n                        <div class=\"col-xs-12 col-sm-4 footer-logo\">\r\n                            <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Footer logo\" /></a></figure>\r\n                        </div>\r\n                        <!-- <div class=\"col-xs-12 col-sm-2 footer-social-links pull-right hidden-md hidden-lg hidden-xs\">\r\n                            <ul>\r\n                                <li><a href=\"#\"><i class=\"fa fa-facebook hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-twitter hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-google-plus hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-instagram hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-tumblr hvr-wobble-top\"></i></a></li>\r\n                            </ul>\r\n                        </div> -->\r\n                        <div class=\"col-xs-12 col-sm-5 footer-menu\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>about</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">about us</a></li>\r\n                                        <li><a href=\"#\">See all cities</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>Services</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">Help</a></li>\r\n                                        <li><a href=\"#\">FAQs</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>term</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">privacy</a></li>\r\n                                        <li><a href=\"#\">Terms</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xs-12 col-sm-3 footer-social-links pull-right hidden-sm\">\r\n                            <ul>\r\n                                <li><a href=\"#\"><i class=\"fa fa-facebook hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-twitter hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-google-plus hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-instagram hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-tumblr hvr-wobble-top\"></i></a></li>\r\n                            </ul>\r\n                        </div>\r\n                  </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"bottom-footer\">\r\n                <div class=\"container\">\r\n                    <div class=\"copyright-text text-center\">&copy; 2017 Feast Freedom. ALL RIGHT RESERVED.</div>\r\n                </div>\r\n            </div>\r\n        </footer>\r\n        <!-- ============== footer block starts ============== -->\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<!-- loader image before page load starts -->\r\n    <div class=\"se-pre-con\"></div>\r\n    <!-- loader image before page load ends -->\r\n    <!-- main wrapper of the site starts -->\r\n    <div class=\"wrapper\">\r\n        <router-outlet></router-outlet>\r\n        \r\n        <!-- ============== footer block starts ============== -->\r\n        <footer>\r\n            <div class=\"top-footer\">\r\n              <div class=\"container\">\r\n                <div class=\"row\">\r\n                        <div class=\"col-xs-12 col-sm-4 footer-logo\">\r\n                            <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Footer logo\" /></a></figure>\r\n                        </div>\r\n                        <!-- <div class=\"col-xs-12 col-sm-2 footer-social-links pull-right hidden-md hidden-lg hidden-xs\">\r\n                            <ul>\r\n                                <li><a href=\"#\"><i class=\"fa fa-facebook hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-twitter hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-google-plus hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-instagram hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-tumblr hvr-wobble-top\"></i></a></li>\r\n                            </ul>\r\n                        </div> -->\r\n                        <div class=\"col-xs-12 col-sm-5 footer-menu\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>about</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">about us</a></li>\r\n                                        <li><a href=\"#\">See all cities</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                                \r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>Services</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">Help</a></li>\r\n                                        <li><a href=\"#\">FAQs</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                                <div class=\"col-xs-12 col-sm-4 footer-links-col\">\r\n                                    <span>term</span>\r\n                                    <ul>\r\n                                        <li><a href=\"#\">privacy</a></li>\r\n                                        <li><a href=\"#\">Terms</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xs-12 col-sm-3 footer-social-links pull-right hidden-sm\">\r\n                            <ul>\r\n                                <li><a href=\"#\"><i class=\"fa fa-facebook hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-twitter hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-google-plus hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-instagram hvr-wobble-top\"></i></a></li>\r\n                                <li><a href=\"#\"><i class=\"fa fa-tumblr hvr-wobble-top\"></i></a></li>\r\n                            </ul>\r\n                        </div>\r\n                  </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"bottom-footer\">\r\n                <div class=\"container\">\r\n                    <div class=\"copyright-text text-center\">&copy; 2017 Feast Freedom. ALL RIGHTS RESERVED.</div>\r\n                </div>\r\n            </div>\r\n        </footer>\r\n        <!-- ============== footer block starts ============== -->\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -89,6 +89,12 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_modals_categories_categories_component__ = __webpack_require__("../../../../../src/app/components/modals/categories/categories.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__ = __webpack_require__("../../../../../src/app/components/modals/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchenverify_kitchenverify_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_google_recaptcha__ = __webpack_require__("../../../../ng2-google-recaptcha/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ng2_validation__ = __webpack_require__("../../../../ng2-validation/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ng2_validation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_ng2_validation__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -113,6 +119,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
 //new comment sss
 var ROUTES = [
     {
@@ -127,6 +139,10 @@ var ROUTES = [
     {
         path: 'stores',
         component: __WEBPACK_IMPORTED_MODULE_10__components_stores_stores_component__["a" /* StoresComponent */]
+    },
+    {
+        path: 'kitchensetup',
+        component: __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */]
     }
 ];
 var AppModule = (function () {
@@ -141,14 +157,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__components_stores_stores_component__["a" /* StoresComponent */],
             __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_modals_categories_categories_component__["a" /* CategoriesComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchenverify_kitchenverify_component__["a" /* KitchenverifyComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_17__angular_forms__["FormsModule"], __WEBPACK_IMPORTED_MODULE_18_ng2_validation__["CustomFormsModule"], __WEBPACK_IMPORTED_MODULE_17__angular_forms__["ReactiveFormsModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4_ng2_google_place_autocomplete__["a" /* GooglePlaceModule */],
-            __WEBPACK_IMPORTED_MODULE_6_angular2_infinite_scroll__["InfiniteScrollModule"],
+            __WEBPACK_IMPORTED_MODULE_6_angular2_infinite_scroll__["InfiniteScrollModule"], __WEBPACK_IMPORTED_MODULE_16_ng2_google_recaptcha__["a" /* Ng2GoogleRecaptchaModule */],
             __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageModule"].withConfig({
                 prefix: 'my-app',
                 storageType: 'localStorage'
@@ -189,7 +207,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- ============== Header starts ============== -->\r\n  <header>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\"> \r\n        \r\n        <!-- ============== Left logo block starts ============== -->\r\n        <div class=\"col-xs-5 col-sm-6 logo-block\">\r\n          <figure><a href=\"/home\" ><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Logo\" /></a></figure>\r\n        </div>\r\n        <!-- ============== Left logo block ends ============== -->\r\n        \r\n        <div class=\"col-xs-7 col-sm-6 pull-right text-right right-nav\"> \r\n          <a (click) = \"openLogin()\" style=\"color:#4ea950; padding:0 5px; cursor:pointer\">SIGN IN </a> \r\n          <a class=\"btn border-btn-small\" href=\"#\">Register</a> \r\n        </div>\r\n        <!-- ============== Main navigation ends ============== --> \r\n      </div>\r\n    </div>\r\n  </header>\r\n  <!-- ============== Header ends ============== -->\r\n\r\n   <div class=\"mainslides\">\r\n    <ul class=\"cb-slideshow\">\r\n      <li><span>Image 01</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 02</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 03</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 04</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 05</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 06</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"content\">\r\n      <form class=\"subscribe-form\">\r\n        <b>ENTER YOUR ADDRESS</b><br>\r\n        <input #textbox type=\"text\" class=\"text-spx text-lt\" placeholder=\"Street address, City, State\"\r\n        [options]='options' (setAddress) = \"getAddress($event)\"(street_number) = 'street_number=$event'(street)= 'street=$event'\r\n        (city)= 'city=$event'(state)='state=$event'(district)='district=$event'(country)='country=$event'\r\n        (postal_code)='postal_code=$event'(lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' \r\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event'  (utc_offset)='utc_offset=$event' \r\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event'  (CountryCodes)='CountryCodes=$event'\r\n        id=\"autocomplete\" ng2-google-place-autocomplete/> \r\n        <button type=\"button\" class=\"btn text-uppercase wow flipInX animated animated\" style=\"visibility: visible; animation-name: flipInX;\" \r\n        (click)=\"btnFindFood(textbox.value,'xxx')\" >Find Food</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n\r\n  <main> \r\n    <!-- ============== how it works block starts ============== -->\r\n    <section class=\"block how-it-works-block\">\r\n      <div class=\"container\">\r\n        <div class=\"top-text text-center wow fadeInUp\">\r\n          <h4 class=\"text-uppercase text-lt text-sp\" >HOW IT WORKS</h4>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 col-sm-4 choose wow fadeInLeft\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/meal.svg\" alt=\"Meal icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Choose Your Favorite</a></h5>\r\n              <p>Choose your favorite meals and order online or by phone. It's easy to customize your order.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 deliver wow fadeInUp\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/delivery.svg\" alt=\"Delivery icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">We Deliver Your Meals</a></h5>\r\n              <p>We prepared and delivered meals arrive at your door. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 eat wow fadeInRight\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/eat-enjoy.svg\" alt=\"Eat and enjoy icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Eat and Enjoy</a></h5>\r\n              <p>No shooping, no cooking, no counting and no cleaning. Enjoy your healthy meals with your family.</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <!-- ============== how it works block starts ============== --> \r\n    \r\n    <!-- ============== full width video block starts ============== -->\r\n    <section class=\"full-width-video\">\r\n      <div class=\"video-wra\"> <img class=\"video-bg\" alt=\"demo video playback\" src=\"assets/images/video-bg.jpg\"> </div>\r\n    </section>\r\n    <!-- ============== full width video block ends ============== --> \r\n    \r\n    <!-- ============== download app block starts ============== -->\r\n    <section class=\"download-app-block\">\r\n      <div class=\"container\"> \r\n        <!-- left image starts -->\r\n        <div class=\"wow fadeInLeft left-mobile\">\r\n          <figure><img src=\"assets/images/mobile-phone.png\" alt=\"Mobile phone\" /></figure>\r\n        </div>\r\n        <!-- left image ends --> \r\n        \r\n        <!-- right text starts -->\r\n        <div class=\"wow fadeInRight download-app-text\">\r\n          <div class=\"download-app-wrap\">\r\n            <h4><a href=\"#\" class=\"text-lt text-sp\">Download the app</a></h4>\r\n            <h1 class=\"text-lt text-sp\">Choose. Eat. Enjoy</h1>\r\n            <p>Nam liber tempor csoluta nobis eleifnd option congue nihil imperdiet doming iquod mazim placerat facer possim assum lorem ipsum dolor possim assum lorem ipsum dolor.</p>\r\n            <div class=\"download-from\"> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/app-store.png\" alt=\"App store\" /></a> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/google-play.png\" alt=\"Google Play\" /></a> </div>\r\n          </div>\r\n        </div>\r\n        <!-- right text ends --> \r\n      </div>\r\n    </section>\r\n    <!-- ============== download app block ends ============== --> \r\n    \r\n    <!-- ============== testimonials block starts ============== --> \r\n    \r\n  </main>"
+module.exports = "<!-- ============== Header starts ============== -->\r\n  <header>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\"> \r\n        \r\n        <!-- ============== Left logo block starts ============== -->\r\n        <div class=\"col-xs-5 col-sm-6 logo-block\">\r\n          <figure><a href=\"/home\" ><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Logo\" /></a></figure>\r\n        </div>\r\n        <!-- ============== Left logo block ends ============== -->\r\n        \r\n        <div class=\"col-xs-7 col-sm-6 pull-right text-right right-nav\"> \r\n          <a (click) = \"openLogin()\" style=\"color:#4ea950; padding:0 5px; cursor:pointer\">SIGN IN </a>\r\n        </div>\r\n        <!-- ============== Main navigation ends ============== --> \r\n      </div>\r\n    </div>\r\n  </header>\r\n  <!-- ============== Header ends ============== -->\r\n\r\n   <div class=\"mainslides\">\r\n    <ul class=\"cb-slideshow\">\r\n      <li><span>Image 01</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 02</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 03</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 04</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 05</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 06</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"content\">\r\n      <form class=\"subscribe-form\">\r\n        <b>ENTER YOUR ADDRESS</b><br>\r\n        <input #textbox type=\"text\" class=\"text-spx text-lt\" placeholder=\"Street address, City, State\"\r\n        [options]='options' (setAddress) = \"getAddress($event)\"(street_number) = 'street_number=$event'(street)= 'street=$event'\r\n        (city)= 'city=$event'(state)='state=$event'(district)='district=$event'(country)='country=$event'\r\n        (postal_code)='postal_code=$event'(lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' \r\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event'  (utc_offset)='utc_offset=$event' \r\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event'  (CountryCodes)='CountryCodes=$event'\r\n        id=\"autocomplete\" ng2-google-place-autocomplete (focus)=\"focusFunction()\"/> \r\n\r\n        <button type=\"button\" class=\"btn text-uppercase wow flipInX animated animated\" style=\"visibility: visible; animation-name: flipInX;\" \r\n        (click)=\"btnFindFood(textbox.value,'xxx')\" >Find Food</button>\r\n        <div style=\"color:red\" *ngIf=\"gautocom\">\r\n        <p *ngIf=\"gautocom\" class=\"alert alert-danger\">\r\n            Please enter an address\r\n        </p>\r\n        </div>\r\n       </form> \r\n    </div>\r\n  </div>\r\n\r\n  <main> \r\n    <!-- ============== how it works block starts ============== -->\r\n    <section class=\"block how-it-works-block\">\r\n      <div class=\"container\">\r\n        <div class=\"top-text text-center wow fadeInUp\">\r\n          <h4 class=\"text-uppercase text-lt text-sp\" >HOW IT WORKS</h4>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 col-sm-4 choose wow fadeInLeft\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/meal.svg\" alt=\"Meal icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Choose Your Favorite</a></h5>\r\n              <p>Choose your favorite meals and order online or by phone. It's easy to customize your order.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 deliver wow fadeInUp\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/delivery.svg\" alt=\"Delivery icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">We Deliver Your Meals</a></h5>\r\n              <p>We prepared and delivered meals arrive at your door. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 eat wow fadeInRight\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/eat-enjoy.svg\" alt=\"Eat and enjoy icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Eat and Enjoy</a></h5>\r\n              <p>No shooping, no cooking, no counting and no cleaning. Enjoy your healthy meals with your family.</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <!-- ============== how it works block starts ============== --> \r\n    \r\n    <!-- ============== full width video block starts ============== -->\r\n    <section class=\"full-width-video\">\r\n      <div class=\"video-wra\"> <img class=\"video-bg\" alt=\"demo video playback\" src=\"assets/images/video-bg.jpg\"> </div>\r\n    </section>\r\n    <!-- ============== full width video block ends ============== --> \r\n    \r\n    <!-- ============== download app block starts ============== -->\r\n    <section class=\"download-app-block\">\r\n      <div class=\"container\"> \r\n        <!-- left image starts -->\r\n        <div class=\"wow fadeInLeft left-mobile\">\r\n          <figure><img src=\"assets/images/mobile-phone.png\" alt=\"Mobile phone\" /></figure>\r\n        </div>\r\n        <!-- left image ends --> \r\n        \r\n        <!-- right text starts -->\r\n        <div class=\"wow fadeInRight download-app-text\">\r\n          <div class=\"download-app-wrap\">\r\n            <h4><a href=\"#\" class=\"text-lt text-sp\">Download the app</a></h4>\r\n            <h1 class=\"text-lt text-sp\">Choose. Eat. Enjoy</h1>\r\n            <p>Nam liber tempor csoluta nobis eleifnd option congue nihil imperdiet doming iquod mazim placerat facer possim assum lorem ipsum dolor possim assum lorem ipsum dolor.</p>\r\n            <div class=\"download-from\"> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/app-store.png\" alt=\"App store\" /></a> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/google-play.png\" alt=\"Google Play\" /></a> </div>\r\n          </div>\r\n        </div>\r\n        <!-- right text ends --> \r\n      </div>\r\n    </section>\r\n    <!-- ============== download app block ends ============== --> \r\n    \r\n    <!-- ============== testimonials block starts ============== --> \r\n    \r\n  </main>"
 
 /***/ }),
 
@@ -221,13 +239,16 @@ var HomeComponent = (function () {
         this.modalService = modalService;
         this.userTypeAddress = '';
         this.userTypeAddress2 = '';
+        this.street_number = '';
         this.street = '';
         this.city = '';
         this.state = '';
         this.country = '';
+        this.postal_code = '';
         this.lat = '';
         this.lng = '';
         this.utc_offset = '';
+        this.gautocom = false;
         this.options = {
             types: ['address'],
             componentRestrictions: {
@@ -239,14 +260,33 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.getAddress = function (place) {
         console.log("Address", place);
+        this.street_number = place['address_components'][0].long_name;
+        this.street = place['address_components'][1].long_name;
+        this.city = place['address_components'][2].long_name;
+        this.state = place['address_components'][4].long_name;
+        this.country = place['address_components'][5].short_name;
+        this.postal_code = place['address_components'][6].long_name;
+        this.lat = place['geometry'].location.lat();
+        this.lng = place['geometry'].location.lng();
+        localStorage.setItem("googleaddress", JSON.stringify({ street_number: this.street_number, street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset, postal_code: this.postal_code }));
+        this.router.navigate(['/stores']);
     };
     HomeComponent.prototype.btnFindFood = function (value, value1) {
         this.userTypeAddress = "'" + value + "'\n";
         this.userTypeAddress2 = "'" + value1 + "'\n";
-        localStorage.setItem("googleaddress", JSON.stringify({ street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset }));
-        this.router.navigate([
-            '/stores'
-        ]);
+        if (value != "") {
+            localStorage.setItem("googleaddress", JSON.stringify({ street_number: this.street_number, street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset, postal_code: this.postal_code }));
+            this.router.navigate(['/stores']);
+        }
+        else {
+            this.gautocom = true;
+        }
+    };
+    HomeComponent.prototype.focusFunction = function () {
+        this.gautocom = false;
+    };
+    HomeComponent.prototype.focusOutFunction = function () {
+        this.gautocom = false;
     };
     HomeComponent.prototype.openLogin = function () {
         var modalRef = this.modalService.open(__WEBPACK_IMPORTED_MODULE_3__components_modals_login_login_component__["a" /* LoginComponent */]);
@@ -264,6 +304,154 @@ HomeComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".select-program-block {\r\n    background: url(/assets/images/video-bg.jpg) no-repeat center bottom;\r\n    padding:60px 0 200px;\r\n    background-size: contain;}\r\n\t.right-form-block{background:#f7f8f9; padding:20px;}\r\n\t.right-form-block fieldset {\r\n    margin-bottom: 30px;\r\n}\r\n.right-form-block p{font-size:12px; line-height:normal;  margin-bottom: 10px;}\r\n.right-form-block input {\r\n    width: 100%;\r\n    position: relative;   \r\n    border: 1px solid #60ba62;\r\n    padding:13px 20px;\r\n\tmargin-bottom:15px;\r\n   border-radius:0;\r\n    font-size: 14px;\r\n}\r\n.right-form-block input[type=submit]{\r\n\tpadding:12px;}\r\nselect {\r\n    display: inline-block;\r\n    width: auto;\r\n    border: 1px solid #66ab79;\r\n    cursor: pointer;\r\n    color: #60ba62;\r\n    padding: 12px 45px 12px 20px;\r\n    font-size: 16px;\r\n    background: url(/assets/images/down-arrow.png) no-repeat;\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    -ms-appearance: none;\r\n    background-position: 94% 53%;\r\n}\r\n.left-image-block h1 {font-size:50px;  line-height:54px;    font-family: \"Montserrat\";\r\n    font-weight: 200;    font-style: normal; }\r\n\t.left-image-block h1 span {font-size:50px;     font-family: \"Montserrat\";\r\n    font-weight: 300;\r\n    font-style: normal;}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- ============== Header starts ============== -->\r\n<header>\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n\r\n      <!-- ============== Left logo block starts ============== -->\r\n      <div class=\"col-xs-5 col-sm-6 logo-block\">\r\n        <figure><a href=\"/home\"><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Logo\" /></a></figure>\r\n      </div>\r\n      <!-- ============== Left logo block ends ============== -->\r\n\r\n      <div class=\"col-xs-7 col-sm-6 pull-right text-right right-nav\">\r\n        <a (click)=\"openLogin()\" style=\"color:#4ea950; padding:0 5px; cursor:pointer\">SIGN IN </a>\r\n      </div>\r\n      <!-- ============== Main navigation ends ============== -->\r\n    </div>\r\n  </div>\r\n</header>\r\n<!-- ============== Header ends ============== -->\r\n\r\n<section class=\"block select-program-block\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12 col-sm-8 wow fadeInLeft left-image-block animated\" style=\"visibility: visible; animation-name: fadeInLeft;\">\r\n        <h1><span>The fast way to</span> <br>get food to your <br>customers</h1>\r\n      </div>\r\n      <div class=\"col-xs-12 col-sm-4 wow fadeInRight pull-right right-form-block animated\" style=\"visibility: visible; animation-name: fadeInRight;\">\r\n        <h3 class=\"text-uppercase text-sp text-center\">Partner with us</h3>\r\n        <form>\r\n          <input type=\"text\" placeholder=\"Kitchen Display Name\" class=\"form-control\">\r\n          <input type=\"text\" placeholder=\"Contact Name\" class=\"form-control\">\r\n          <input type=\"text\" placeholder=\"Email\" class=\"form-control\">\r\n          <input type=\"text\" placeholder=\"Phone #\" class=\"form-control\">\r\n          <ng2-google-recaptcha class=\"form-control\"\r\n                  [siteKey]=\"recaptchaSiteKey\" \r\n                  (onCaptchaComplete)=\"onCaptchaComplete($event)\">\r\n               </ng2-google-recaptcha>\r\n          <!-- <input type=\"text\" placeholder=\"Captcha\" class=\"form-control\"> -->\r\n          <input type=\"submit\" class=\"btn hvr-wobble-horizontal text-lt text-sp\" value=\"Verify Email\">\r\n\r\n          <p>After you submit this form, a member of the Feast team will get in touch with you.</p>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_modals_login_login_component__ = __webpack_require__("../../../../../src/app/components/modals/login/login.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KitchensetupComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var KitchensetupComponent = (function () {
+    function KitchensetupComponent(router, modalService) {
+        this.router = router;
+        this.modalService = modalService;
+        this.recaptchaSiteKey = '6LdQeCsUAAAAAIS_NB_-rzMVzgMHJ48e6jCKtFe5';
+        this.delayToRender = 1000; // A one second delay before rendering this element
+        // Style to use - all properties are optional and the style can be ommitted completely
+        this.recaptchaStyle = {
+            theme: 'dark',
+            type: 'audio',
+            size: 'compact',
+            tabindex: 5,
+        };
+    }
+    KitchensetupComponent.prototype.onCaptchaComplete = function (response) {
+        console.log('reCAPTCHA response recieved:');
+        console.log(response.success);
+        console.log(response.token);
+    };
+    KitchensetupComponent.prototype.ngOnInit = function () {
+    };
+    KitchensetupComponent.prototype.openLogin = function () {
+        var modalRef = this.modalService.open(__WEBPACK_IMPORTED_MODULE_3__components_modals_login_login_component__["a" /* LoginComponent */]);
+    };
+    return KitchensetupComponent;
+}());
+KitchensetupComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-kitchensetup',
+        template: __webpack_require__("../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _b || Object])
+], KitchensetupComponent);
+
+var _a, _b;
+//# sourceMappingURL=kitchensetup.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  kitchenverify works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KitchenverifyComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var KitchenverifyComponent = (function () {
+    function KitchenverifyComponent() {
+    }
+    KitchenverifyComponent.prototype.ngOnInit = function () {
+    };
+    return KitchenverifyComponent;
+}());
+KitchenverifyComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-kitchenverify',
+        template: __webpack_require__("../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], KitchenverifyComponent);
+
+//# sourceMappingURL=kitchenverify.component.js.map
 
 /***/ }),
 
@@ -462,7 +650,7 @@ var StoresComponent = (function () {
         //);
         var address = JSON.parse(localStorage.getItem("googleaddress"));
         // this.gaddress=address.street+', '+ address.city+' ,'+address.st+' ,'+address.co+' ,'+address.utc_offset
-        this.gaddress = address.street + ', ' + address.city + ' ,' + address.st + ' ,' + address.co;
+        this.gaddress = address.street_number + ', ' + address.street + ', ' + address.city + ' ,' + address.st + ' ,' + address.co;
         var result;
         this.restaurantService.getSerchDatetime(address.lat, address.lng).subscribe(function (data) {
             _this.SerchAddressLocalDateTime = data;
