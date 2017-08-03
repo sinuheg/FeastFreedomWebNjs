@@ -1,0 +1,39 @@
+.select-program-block {
+    background: url(~/assets/images/video-bg.jpg) no-repeat center bottom;
+    padding:60px 0 200px;
+    background-size: contain;}
+	.right-form-block{background:#f7f8f9; padding:20px;}
+	.right-form-block fieldset {
+    margin-bottom: 30px;
+}
+.right-form-block p{font-size:12px; line-height:normal;  margin-bottom: 10px;}
+.right-form-block input {
+    width: 100%;
+    position: relative;   
+    border: 1px solid #60ba62;
+    padding:13px 20px;
+	margin-bottom:15px;
+   border-radius:0;
+    font-size: 14px;
+}
+.right-form-block input[type=submit]{
+	padding:12px;}
+select {
+    display: inline-block;
+    width: auto;
+    border: 1px solid #66ab79;
+    cursor: pointer;
+    color: #60ba62;
+    padding: 12px 45px 12px 20px;
+    font-size: 16px;
+    background: url(~/assets/images/down-arrow.png) no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background-position: 94% 53%;
+}
+.left-image-block h1 {font-size:50px;  line-height:54px;    font-family: "Montserrat";
+    font-weight: 200;    font-style: normal; }
+	.left-image-block h1 span {font-size:50px;     font-family: "Montserrat";
+    font-weight: 300;
+    font-style: normal;}
