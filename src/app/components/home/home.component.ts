@@ -40,12 +40,22 @@ export class HomeComponent implements OnInit {
 
   getAddress(place: Object) {
     console.log("Address", place);
-    this.street_number = place['address_components'][0].long_name;
-    this.street = place['address_components'][1].long_name;
-    this.city = place['address_components'][2].long_name;
-    this.state = place['address_components'][4].long_name;
-    this.country = place['address_components'][5].short_name;
-    this.postal_code = place['address_components'][6].long_name;
+   var len=place['address_components'].length;
+    for (let i = 0; i < len; i++) {
+    var addr = place['address_components'][i];
+      if (addr.types[0] == 'street_number') {
+                this.street_number = addr.long_name;}
+      if (addr.types[0] == 'route') {
+                this.street = addr.long_name;}
+      if (addr.types[0] == 'locality') {
+                this.city = addr.long_name;}
+      if (addr.types[0] == 'administrative_area_level_1') {
+                this.state = addr.long_name;}  
+      if (addr.types[0] == 'country') {
+                this.country = addr.long_name;}  
+      if (addr.types[0] == 'postal_code') {
+         this.postal_code = addr.long_name;}        
+   }
     this.lat=place['geometry'].location.lat();
     this.lng=place['geometry'].location.lng();
       localStorage.setItem("googleaddress", JSON.stringify({ street_number:this.street_number,  street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset,postal_code:this.postal_code }));
@@ -57,7 +67,6 @@ export class HomeComponent implements OnInit {
     this.userTypeAddress2 = `'${value1}'\n`;
 
     if(value!=""){
-      
         localStorage.setItem("googleaddress", JSON.stringify({ street_number:this.street_number,  street: this.street, city: this.city, st: this.state, co: this.country, lat: this.lat, lng: this.lng, utc_offset: this.utc_offset,postal_code:this.postal_code }));
         this.router.navigate(['/stores']);
     }
