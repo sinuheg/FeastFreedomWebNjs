@@ -6,6 +6,7 @@ import {LoginComponent} from '../../components/modals/login/login.component'
 
 import { FormGroup, FormControl } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
+import {GenericHttpService} from '../../services/generic-http.service'
 
 @Component({
   selector: 'app-home',
@@ -26,12 +27,24 @@ export class HomeComponent implements OnInit {
   private utc_offset:string='';
   gautocom=false;
   address :Object;
-  constructor(private router: Router, private modalService: NgbModal) {}
+  userLocation: Object;
+  constructor(private router: Router, private modalService: NgbModal, private genericHttpService: GenericHttpService) {}
 
   ngOnInit() {
     var googleaddress = localStorage.getItem('googleaddress');
     if(googleaddress)
       this.router.navigate(['/stores']);
+
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        this.genericHttpService.getRequest(`api/getuserlocation/${position.coords.latitude}/${position.coords.longitude}`).subscribe(data =>{
+          this.userLocation = data;
+        });;
+      });
+   }
+    this.genericHttpService.getRequest('api/getuserlocation').subscribe(data =>{
+       this.userLocation = data;
+    });;
   }
 
   public options = {

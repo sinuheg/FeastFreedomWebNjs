@@ -84,20 +84,21 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_infinite_scroll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_restaurant_service__ = __webpack_require__("../../../../../src/app/services/restaurant.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_stores_stores_component__ = __webpack_require__("../../../../../src/app/components/stores/stores.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_modals_categories_categories_component__ = __webpack_require__("../../../../../src/app/components/modals/categories/categories.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__ = __webpack_require__("../../../../../src/app/components/modals/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchenverify_kitchenverify_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_google_recaptcha__ = __webpack_require__("../../../../ng2-google-recaptcha/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ng2_validation__ = __webpack_require__("../../../../ng2-validation/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ng2_validation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_ng2_validation__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular_google_signin__ = __webpack_require__("../../../../angular-google-signin/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_angular_google_signin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_angular_google_signin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_generic_http_service__ = __webpack_require__("../../../../../src/app/services/generic-http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_stores_stores_component__ = __webpack_require__("../../../../../src/app/components/stores/stores.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_modals_categories_categories_component__ = __webpack_require__("../../../../../src/app/components/modals/categories/categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_modals_login_login_component__ = __webpack_require__("../../../../../src/app/components/modals/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchensetup_kitchensetup_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchensetup/kitchensetup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_kitchen_kitchenverify_kitchenverify_component__ = __webpack_require__("../../../../../src/app/components/kitchen/kitchenverify/kitchenverify.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ng2_google_recaptcha__ = __webpack_require__("../../../../ng2-google-recaptcha/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng2_validation__ = __webpack_require__("../../../../ng2-validation/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng2_validation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_ng2_validation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular_google_signin__ = __webpack_require__("../../../../angular-google-signin/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular_google_signin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_angular_google_signin__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -115,6 +116,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 //services
+
 
 //components
 
@@ -139,15 +141,15 @@ var ROUTES = [
     },
     {
         path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */]
     },
     {
         path: 'stores',
-        component: __WEBPACK_IMPORTED_MODULE_10__components_stores_stores_component__["a" /* StoresComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_11__components_stores_stores_component__["a" /* StoresComponent */]
     },
     {
         path: 'kitchensetup',
-        component: __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */]
     }
 ];
 var AppModule = (function () {
@@ -158,25 +160,25 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_stores_stores_component__["a" /* StoresComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_modals_categories_categories_component__["a" /* CategoriesComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_20_angular_google_signin__["GoogleSignInComponent"],
-            __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchenverify_kitchenverify_component__["a" /* KitchenverifyComponent */]
+            __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_stores_stores_component__["a" /* StoresComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_modals_categories_categories_component__["a" /* CategoriesComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_modals_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_21_angular_google_signin__["GoogleSignInComponent"],
+            __WEBPACK_IMPORTED_MODULE_14__components_modals_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_kitchen_kitchensetup_kitchensetup_component__["a" /* KitchensetupComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_kitchen_kitchenverify_kitchenverify_component__["a" /* KitchenverifyComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_17__angular_forms__["FormsModule"], __WEBPACK_IMPORTED_MODULE_18_ng2_validation__["CustomFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_17__angular_forms__["ReactiveFormsModule"], __WEBPACK_IMPORTED_MODULE_16_ng2_google_recaptcha__["a" /* Ng2GoogleRecaptchaModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_18__angular_forms__["FormsModule"], __WEBPACK_IMPORTED_MODULE_19_ng2_validation__["CustomFormsModule"],
+            __WEBPACK_IMPORTED_MODULE_18__angular_forms__["ReactiveFormsModule"], __WEBPACK_IMPORTED_MODULE_17_ng2_google_recaptcha__["a" /* Ng2GoogleRecaptchaModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4_ng2_google_place_autocomplete__["a" /* GooglePlaceModule */],
             __WEBPACK_IMPORTED_MODULE_6_angular2_infinite_scroll__["InfiniteScrollModule"],
-            __WEBPACK_IMPORTED_MODULE_17__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_19_ngx_facebook__["a" /* FacebookModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_18__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_20_ngx_facebook__["a" /* FacebookModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageModule"].withConfig({
                 prefix: 'my-app',
                 storageType: 'localStorage'
@@ -184,11 +186,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_12__components_modals_categories_categories_component__["a" /* CategoriesComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_modals_login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__components_modals_categories_categories_component__["a" /* CategoriesComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_modals_login_login_component__["a" /* LoginComponent */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_restaurant_service__["a" /* RestaurantService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_8__services_restaurant_service__["a" /* RestaurantService */], __WEBPACK_IMPORTED_MODULE_9__services_generic_http_service__["a" /* GenericHttpService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -217,7 +219,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- ============== Header starts ============== -->\r\n  <header>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\"> \r\n        \r\n        <!-- ============== Left logo block starts ============== -->\r\n        <div class=\"col-xs-5 col-sm-6 logo-block\">\r\n          <figure><a href=\"/home\" ><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Logo\" /></a></figure>\r\n        </div>\r\n        <!-- ============== Left logo block ends ============== -->\r\n        \r\n        <div class=\"col-xs-7 col-sm-6 pull-right text-right right-nav\"> \r\n          <a (click) = \"openLogin()\" style=\"color:#4ea950; padding:0 5px; cursor:pointer\">SIGN IN </a> \r\n          <!-- <a class=\"btn border-btn-small\" href=\"#\">Register</a>  -->\r\n        </div>\r\n        <!-- ============== Main navigation ends ============== --> \r\n      </div>\r\n    </div>\r\n  </header>\r\n  <!-- ============== Header ends ============== -->\r\n\r\n   <div class=\"mainslides\">\r\n    <ul class=\"cb-slideshow\">\r\n      <li><span>Image 01</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 02</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 03</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 04</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 05</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 06</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"content\">\r\n      <form class=\"subscribe-form\">\r\n        <b>ENTER YOUR ADDRESS</b><br>\r\n        <input #textbox type=\"text\" class=\"text-spx text-lt\" placeholder=\"Street address, City, State\"\r\n        [options]='options' (setAddress) = \"getAddress($event)\"(street_number) = 'street_number=$event'(street)= 'street=$event'\r\n        (city)= 'city=$event'(state)='state=$event'(district)='district=$event'(country)='country=$event'\r\n        (postal_code)='postal_code=$event'(lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' \r\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event'  (utc_offset)='utc_offset=$event' \r\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event'  (CountryCodes)='CountryCodes=$event'\r\n        id=\"autocomplete\" ng2-google-place-autocomplete (focus)=\"focusFunction()\"/> \r\n\r\n        <button type=\"button\" class=\"btn text-uppercase wow flipInX animated animated\" style=\"visibility: visible; animation-name: flipInX;\" \r\n        (click)=\"btnFindFood(textbox.value,'xxx')\" >Find Food</button>\r\n        <div style=\"color:red\" *ngIf=\"gautocom\">\r\n        <p *ngIf=\"gautocom\" class=\"alert alert-danger\">\r\n            Please enter an address\r\n        </p>\r\n        </div>\r\n       </form> \r\n    </div>\r\n  </div>\r\n\r\n  <main> \r\n    <!-- ============== how it works block starts ============== -->\r\n    <section class=\"block how-it-works-block\">\r\n      <div class=\"container\">\r\n        <div class=\"top-text text-center wow fadeInUp\">\r\n          <h4 class=\"text-uppercase text-lt text-sp\" >HOW IT WORKS</h4>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 col-sm-4 choose wow fadeInLeft\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/meal.svg\" alt=\"Meal icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Choose Your Favorite</a></h5>\r\n              <p>Choose your favorite meals and order online or by phone. It's easy to customize your order.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 deliver wow fadeInUp\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/delivery.svg\" alt=\"Delivery icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">We Deliver Your Meals</a></h5>\r\n              <p>We prepared and delivered meals arrive at your door. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 eat wow fadeInRight\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/eat-enjoy.svg\" alt=\"Eat and enjoy icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Eat and Enjoy</a></h5>\r\n              <p>No shopping, no cooking, no counting and no cleaning. Enjoy your healthy meals with your family.</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <!-- ============== how it works block starts ============== --> \r\n    \r\n    <!-- ============== full width video block starts ============== -->\r\n    <section class=\"full-width-video\">\r\n      <div class=\"video-wra\"> <img class=\"video-bg\" alt=\"demo video playback\" src=\"assets/images/video-bg.jpg\"> </div>\r\n    </section>\r\n    <!-- ============== full width video block ends ============== --> \r\n    \r\n    <!-- ============== download app block starts ============== -->\r\n    <section class=\"download-app-block\">\r\n      <div class=\"container\"> \r\n        <!-- left image starts -->\r\n        <div class=\"wow fadeInLeft left-mobile\">\r\n          <figure><img src=\"assets/images/mobile-phone.png\" alt=\"Mobile phone\" /></figure>\r\n        </div>\r\n        <!-- left image ends --> \r\n        \r\n        <!-- right text starts -->\r\n        <div class=\"wow fadeInRight download-app-text\">\r\n          <div class=\"download-app-wrap\">\r\n            <h4><a href=\"#\" class=\"text-lt text-sp\">Download the app</a></h4>\r\n            <h1 class=\"text-lt text-sp\">Choose. Eat. Enjoy</h1>\r\n            <p>Nam liber tempor csoluta nobis eleifnd option congue nihil imperdiet doming iquod mazim placerat facer possim assum lorem ipsum dolor possim assum lorem ipsum dolor.</p>\r\n            <div class=\"download-from\"> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/app-store.png\" alt=\"App store\" /></a> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/google-play.png\" alt=\"Google Play\" /></a> </div>\r\n          </div>\r\n        </div>\r\n        <!-- right text ends --> \r\n      </div>\r\n    </section>\r\n    <!-- ============== download app block ends ============== --> \r\n    \r\n    <!-- ============== testimonials block starts ============== --> \r\n    \r\n  </main>"
+module.exports = "<!-- ============== Header starts ============== -->\r\n  <header>\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\"> \r\n        \r\n        <!-- ============== Left logo block starts ============== -->\r\n        <div class=\"col-xs-5 col-sm-6 logo-block\">\r\n          <figure><a href=\"/home\" ><img class=\"img-responsive\" src=\"assets/images/logo.png\" alt=\"Logo\" /></a></figure>\r\n        </div>\r\n        <div class=\"col-xs-4 col-sm-4 logo-block\">\r\n          <a>{{userLocation.city + ', ' + userLocation.region_name + ', ' + userLocation.country_code}}</a>\r\n        </div>\r\n       \r\n        <!-- ============== Left logo block ends ============== -->\r\n        \r\n        <div class=\"col-xs-3 col-sm-2 pull-right text-right right-nav\"> \r\n          <a (click) = \"openLogin()\" style=\"color:#4ea950; padding:0 5px; cursor:pointer\">SIGN IN </a> \r\n          <!-- <a class=\"btn border-btn-small\" href=\"#\">Register</a>  -->\r\n        </div>\r\n        <!-- ============== Main navigation ends ============== --> \r\n      </div>\r\n    </div>\r\n  </header>\r\n  <!-- ============== Header ends ============== -->\r\n\r\n   <div class=\"mainslides\">\r\n    <ul class=\"cb-slideshow\">\r\n      <li><span>Image 01</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 02</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 03</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 04</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 05</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n      <li><span>Image 06</span>\r\n        <div>\r\n          <h3>Healthy inside, fresh outside.</h3>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n    <div class=\"content\">\r\n      <form class=\"subscribe-form\">\r\n        <b>ENTER YOUR ADDRESS</b><br>\r\n        <input #textbox type=\"text\" class=\"text-spx text-lt\" placeholder=\"Street address, City, State\"\r\n        [options]='options' (setAddress) = \"getAddress($event)\"(street_number) = 'street_number=$event'(street)= 'street=$event'\r\n        (city)= 'city=$event'(state)='state=$event'(district)='district=$event'(country)='country=$event'\r\n        (postal_code)='postal_code=$event'(lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' \r\n        (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event'  (utc_offset)='utc_offset=$event' \r\n        (vicinity)='vicinity=$event' (photos)='photos=$event' (airport)='airport=$event'  (CountryCodes)='CountryCodes=$event'\r\n        id=\"autocomplete\" ng2-google-place-autocomplete (focus)=\"focusFunction()\"/> \r\n\r\n        <button type=\"button\" class=\"btn text-uppercase wow flipInX animated animated\" style=\"visibility: visible; animation-name: flipInX;\" \r\n        (click)=\"btnFindFood(textbox.value,'xxx')\" >Find Food</button>\r\n        <div style=\"color:red\" *ngIf=\"gautocom\">\r\n        <p *ngIf=\"gautocom\" class=\"alert alert-danger\">\r\n            Please enter an address\r\n        </p>\r\n        </div>\r\n       </form> \r\n    </div>\r\n  </div>\r\n\r\n  <main> \r\n    <!-- ============== how it works block starts ============== -->\r\n    <section class=\"block how-it-works-block\">\r\n      <div class=\"container\">\r\n        <div class=\"top-text text-center wow fadeInUp\">\r\n          <h4 class=\"text-uppercase text-lt text-sp\" >HOW IT WORKS</h4>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 col-sm-4 choose wow fadeInLeft\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/meal.svg\" alt=\"Meal icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Choose Your Favorite</a></h5>\r\n              <p>Choose your favorite meals and order online or by phone. It's easy to customize your order.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 deliver wow fadeInUp\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/delivery.svg\" alt=\"Delivery icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">We Deliver Your Meals</a></h5>\r\n              <p>We prepared and delivered meals arrive at your door. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-xs-12 col-sm-4 eat wow fadeInRight\">\r\n            <div class=\"feature-item-wrap text-center\">\r\n              <figure><a href=\"#\"><img class=\"img-responsive\" src=\"assets/images/eat-enjoy.svg\" alt=\"Eat and enjoy icon\" /></a></figure>\r\n              <h5><a class=\"text-lt\" href=\"#\">Eat and Enjoy</a></h5>\r\n              <p>No shopping, no cooking, no counting and no cleaning. Enjoy your healthy meals with your family.</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <!-- ============== how it works block starts ============== --> \r\n    \r\n    <!-- ============== full width video block starts ============== -->\r\n    <section class=\"full-width-video\">\r\n      <div class=\"video-wra\"> <img class=\"video-bg\" alt=\"demo video playback\" src=\"assets/images/video-bg.jpg\"> </div>\r\n    </section>\r\n    <!-- ============== full width video block ends ============== --> \r\n    \r\n    <!-- ============== download app block starts ============== -->\r\n    <section class=\"download-app-block\">\r\n      <div class=\"container\"> \r\n        <!-- left image starts -->\r\n        <div class=\"wow fadeInLeft left-mobile\">\r\n          <figure><img src=\"assets/images/mobile-phone.png\" alt=\"Mobile phone\" /></figure>\r\n        </div>\r\n        <!-- left image ends --> \r\n        \r\n        <!-- right text starts -->\r\n        <div class=\"wow fadeInRight download-app-text\">\r\n          <div class=\"download-app-wrap\">\r\n            <h4><a href=\"#\" class=\"text-lt text-sp\">Download the app</a></h4>\r\n            <h1 class=\"text-lt text-sp\">Choose. Eat. Enjoy</h1>\r\n            <p>Nam liber tempor csoluta nobis eleifnd option congue nihil imperdiet doming iquod mazim placerat facer possim assum lorem ipsum dolor possim assum lorem ipsum dolor.</p>\r\n            <div class=\"download-from\"> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/app-store.png\" alt=\"App store\" /></a> <a href=\"#\" data-toggle=\"modal\" data-target=\".download-popup\"><img src=\"assets/images/google-play.png\" alt=\"Google Play\" /></a> </div>\r\n          </div>\r\n        </div>\r\n        <!-- right text ends --> \r\n      </div>\r\n    </section>\r\n    <!-- ============== download app block ends ============== --> \r\n    \r\n    <!-- ============== testimonials block starts ============== --> \r\n    \r\n  </main>"
 
 /***/ }),
 
@@ -229,6 +231,7 @@ module.exports = "<!-- ============== Header starts ============== -->\r\n  <hea
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_modals_login_login_component__ = __webpack_require__("../../../../../src/app/components/modals/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_generic_http_service__ = __webpack_require__("../../../../../src/app/services/generic-http.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -243,10 +246,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(router, modalService) {
+    function HomeComponent(router, modalService, genericHttpService) {
         this.router = router;
         this.modalService = modalService;
+        this.genericHttpService = genericHttpService;
         this.userTypeAddress = '';
         this.userTypeAddress2 = '';
         this.street_number = '';
@@ -267,9 +272,22 @@ var HomeComponent = (function () {
         };
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var googleaddress = localStorage.getItem('googleaddress');
         if (googleaddress)
             this.router.navigate(['/stores']);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.genericHttpService.getRequest("api/getuserlocation/" + position.coords.latitude + "/" + position.coords.longitude).subscribe(function (data) {
+                    _this.userLocation = data;
+                });
+                ;
+            });
+        }
+        this.genericHttpService.getRequest('api/getuserlocation').subscribe(function (data) {
+            _this.userLocation = data;
+        });
+        ;
     };
     HomeComponent.prototype.getAddress = function (place) {
         console.log("Address", place);
@@ -328,10 +346,10 @@ HomeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_generic_http_service__["a" /* GenericHttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_generic_http_service__["a" /* GenericHttpService */]) === "function" && _c || Object])
 ], HomeComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -791,6 +809,46 @@ StoresComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=stores.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/generic-http.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GenericHttpService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var GenericHttpService = (function () {
+    function GenericHttpService(http) {
+        this.http = http;
+    }
+    GenericHttpService.prototype.getRequest = function (url) {
+        return this.http.get(url).map(function (res) { return res.json(); });
+    };
+    return GenericHttpService;
+}());
+GenericHttpService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], GenericHttpService);
+
+var _a;
+//# sourceMappingURL=generic-http.service.js.map
 
 /***/ }),
 

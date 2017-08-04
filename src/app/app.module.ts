@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //services
 import { RestaurantService } from './services/restaurant.service';
+import {GenericHttpService } from './services/generic-http.service'
 
 //components
 import { AppComponent } from './app.component';
@@ -84,7 +85,7 @@ const ROUTES = [
     CategoriesComponent,
     LoginComponent
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, GenericHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

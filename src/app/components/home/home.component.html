@@ -7,9 +7,13 @@
         <div class="col-xs-5 col-sm-6 logo-block">
           <figure><a href="/home" ><img class="img-responsive" src="assets/images/logo.png" alt="Logo" /></a></figure>
         </div>
+        <div class="col-xs-4 col-sm-4 logo-block">
+          <a>{{userLocation.city + ', ' + userLocation.region_name + ', ' + userLocation.country_code}}</a>
+        </div>
+       
         <!-- ============== Left logo block ends ============== -->
         
-        <div class="col-xs-7 col-sm-6 pull-right text-right right-nav"> 
+        <div class="col-xs-3 col-sm-2 pull-right text-right right-nav"> 
           <a (click) = "openLogin()" style="color:#4ea950; padding:0 5px; cursor:pointer">SIGN IN </a> 
           <!-- <a class="btn border-btn-small" href="#">Register</a>  -->
         </div>
