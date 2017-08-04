@@ -36,15 +36,17 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/stores']);
 
     if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => {
-        this.genericHttpService.getRequest(`api/getuserlocation/${position.coords.latitude}/${position.coords.longitude}`).subscribe(data =>{
-          this.userLocation = data;
-        });;
+        navigator.geolocation.getCurrentPosition(position => {
+          this.genericHttpService.getRequest(`api/getuserlocation/${position.coords.latitude}/${position.coords.longitude}`).subscribe(data =>{
+            this.userLocation = data;
+          });;
+        });
+    }
+    else{
+      this.genericHttpService.getRequest('api/getuserlocation').subscribe(data =>{
+        this.userLocation = data;
       });
-   }
-    this.genericHttpService.getRequest('api/getuserlocation').subscribe(data =>{
-       this.userLocation = data;
-    });;
+    }
   }
 
   public options = {

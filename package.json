@@ -42,6 +42,7 @@
     "node-google-timezone": "0.0.2",
     "public-ip": "^2.3.5",
     "rxjs": "^5.1.0",
+    "typings": "^2.1.1",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

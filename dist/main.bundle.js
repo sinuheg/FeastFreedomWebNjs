@@ -284,10 +284,11 @@ var HomeComponent = (function () {
                 ;
             });
         }
-        this.genericHttpService.getRequest('api/getuserlocation').subscribe(function (data) {
-            _this.userLocation = data;
-        });
-        ;
+        else {
+            this.genericHttpService.getRequest('api/getuserlocation').subscribe(function (data) {
+                _this.userLocation = data;
+            });
+        }
     };
     HomeComponent.prototype.getAddress = function (place) {
         console.log("Address", place);
