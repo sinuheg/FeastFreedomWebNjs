@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     var googleaddress = localStorage.getItem('googleaddress');
     if(googleaddress)
       this.router.navigate(['/stores']);
-
+    this.userLocation = {};
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
           this.genericHttpService.getRequest(`api/getuserlocation/${position.coords.latitude}/${position.coords.longitude}`).subscribe(data =>{

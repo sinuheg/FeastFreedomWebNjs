@@ -276,6 +276,7 @@ var HomeComponent = (function () {
         var googleaddress = localStorage.getItem('googleaddress');
         if (googleaddress)
             this.router.navigate(['/stores']);
+        this.userLocation = {};
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 _this.genericHttpService.getRequest("api/getuserlocation/" + position.coords.latitude + "/" + position.coords.longitude).subscribe(function (data) {
