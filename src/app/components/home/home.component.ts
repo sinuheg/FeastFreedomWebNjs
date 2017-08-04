@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   private city:string='';
   private state:string='';
   private country:string='';
-  private postal_code:string='';
+  private postal_code:string=''; 
   private lat:string='';
   private lng:string='';
   private utc_offset:string='';
@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private modalService: NgbModal) {}
 
   ngOnInit() {
+    var googleaddress = localStorage.getItem('googleaddress');
+    if(googleaddress)
+      this.router.navigate(['/stores']);
   }
 
   public options = {

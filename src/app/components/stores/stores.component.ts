@@ -61,4 +61,9 @@ export class StoresComponent implements OnInit {
     const modalRef = this.modalService.open(LoginComponent);
   }
 
+  removeAddress(){
+    localStorage.removeItem("googleaddress");
+    this.gaddress = "";
+  }
+
 }
