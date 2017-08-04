@@ -8,7 +8,7 @@
           <figure><a href="/home" ><img class="img-responsive" src="assets/images/logo.png" alt="Logo" /></a></figure>
         </div>
         <div class="col-xs-4 col-sm-4 logo-block">
-          <a>{{userLocation.city + ', ' + userLocation.region_name + ', ' + userLocation.country_code}}</a>
+          <a *ngIf ='userLocation.city' >{{userLocation.city + ', ' + userLocation.region_name + ', ' + userLocation.country_code}}</a>
         </div>
        
         <!-- ============== Left logo block ends ============== -->
